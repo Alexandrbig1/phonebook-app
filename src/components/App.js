@@ -24,6 +24,7 @@ import {
   AppButtonOpen,
   AppButtonClose,
 } from "./AppButton/AppButton";
+import DrawerAppBar from "./HeaderNavigation/HeaderNavigation";
 
 const theme = {
   light: {
@@ -95,6 +96,7 @@ export default function App() {
   return (
     <ThemeProvider theme={isDarkTheme ? theme.dark : theme.light}>
       <GlobalStyle />
+      <DrawerAppBar />
       {initialLoading ? (
         <Loader />
       ) : (
