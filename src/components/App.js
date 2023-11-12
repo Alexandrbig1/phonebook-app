@@ -96,12 +96,13 @@ export default function App() {
   return (
     <ThemeProvider theme={isDarkTheme ? theme.dark : theme.light}>
       <GlobalStyle />
-      <DrawerAppBar />
+      <header>
+        <DrawerAppBar toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
+      </header>
       {initialLoading ? (
         <Loader />
       ) : (
         <AppContainer>
-          <ThemeButton toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
           <AppWrapper open={isOpen}>
             <AppButton onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <AppButtonClose /> : <AppButtonOpen />}

@@ -9,9 +9,9 @@ export const SwitcherTheme = styled.button`
   color: ${(p) => p.theme.colors.bgWrapperLight};
   border-radius: 1.2rem;
   cursor: pointer;
-  position: absolute;
+  /* position: absolute;
   top: 20px;
-  left: 24px;
+  right: 24px; */
   transition: 0.3s;
 `;
 
