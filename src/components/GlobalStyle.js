@@ -22,6 +22,7 @@ export const GlobalStyle = createGlobalStyle`
   overflow: hidden;
   background-color: ${(p) => p.theme.colors.mainBgColor};
   font-family: 'Roboto', sans-serif;
+  /* font-family: 'Raleway', sans-serif; */
   }
 
   p {

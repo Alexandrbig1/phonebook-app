@@ -16,11 +16,16 @@ import Button from "@mui/material/Button";
 import { FaBookReader } from "react-icons/fa";
 import ThemeButton from "../ThemeButton/ThemeButton";
 import { Link, ToolbarStyled } from "./HeaderNavigation.styled";
+import { useAuth } from "../../hooks";
+import AuthNav from "../AuthNav/AuthNav";
+import UserMenu from "../UserMenu/UserMenu";
 
 const drawerWidth = 240;
 const navItems = ["Home", "Contacts"];
 
 function DrawerAppBar(props) {
+  const { isLoggedIn } = useAuth();
+
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -29,7 +34,15 @@ function DrawerAppBar(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <Typography variant="h6" sx={{ my: 2 }}>
         <div
           style={{
@@ -45,13 +58,35 @@ function DrawerAppBar(props) {
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
+        <ListItem disablePadding>
+          <Link to="/">
+            <Button style={{ color: "#000" }}>Home</Button>
+          </Link>
+        </ListItem>
+        {isLoggedIn && (
+          <ListItem disablePadding>
+            <Link to="/contacts">
+              <Button style={{ color: "#000" }}>Contacts</Button>
+            </Link>
+          </ListItem>
+        )}
+        {/* {isLoggedIn ? (
+          <ListItem disablePadding>
+            <UserMenu />
+          </ListItem>
+        ) : (
+          <ListItem disablePadding>
+            <AuthNav />
+          </ListItem>
+        )} */}
+
+        {/* {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
-        ))}
+        ))} */}
       </List>
     </Box>
   );
@@ -77,7 +112,7 @@ function DrawerAppBar(props) {
             variant="h6"
             component="div"
             sx={{
-              // flexGrow: 1,
+              flexGrow: 1,
               display: { xs: "none", sm: "flex" },
               alignItems: "center",
               marginRight: 1,
@@ -87,35 +122,23 @@ function DrawerAppBar(props) {
             PhoneBook
           </Typography>
           <Box
-            variant="h6"
-            component="div"
-            sx={{
-              flexGrow: 1,
-              display: { xs: "flex" },
-              alignItems: "center",
-              justifyContent: { xs: "end", sm: "start" },
-            }}
+            sx={{ display: { xs: "none", sm: "flex" }, alignItems: "center" }}
           >
-            <Link to="/login">
-              <Button color="inherit">Sign In</Button>
-            </Link>
-            <Link to="/register">
-              <Button color="inherit">Sign Up</Button>
-            </Link>
-          </Box>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
             <Link to="/">
               <Button color="inherit">Home</Button>
             </Link>
-            <Link to="/contacts">
-              <Button color="inherit">Contacts</Button>
-            </Link>
+            {isLoggedIn && (
+              <Link to="/contacts">
+                <Button color="inherit">Contacts</Button>
+              </Link>
+            )}
             {/* <Button color="inherit">Home</Button> */}
             {/* <Button color="inherit" disabled>
               Contacts
             </Button> */}
           </Box>
-          <Box style={{ marginLeft: 5 }}>
+          <Box style={{ display: "flex", alignItems: "center" }}>
+            {isLoggedIn ? <UserMenu /> : <AuthNav />}
             <ThemeButton
               toggleTheme={props.toggleTheme}
               isDarkTheme={props.isDarkTheme}
