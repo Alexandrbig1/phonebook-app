@@ -16,24 +16,26 @@ export const SwitcherTheme = styled.button`
 `;
 
 export const IconClickLight = styled(TbSunHigh)`
-  color: ${(p) => p.theme.colors.textColor};
+  color: ${(p) => p.theme.colors.headerTextColor};
+  /* background-color: ${(p) => p.theme.colors.switcherBg}; */
   font-size: 3.6rem;
   transition: 0.3s;
   padding: 0.6rem;
   border-radius: 50%;
 
   &:hover {
-    background-color: ${(p) => p.theme.colors.switcherBg};
+    background-color: ${(p) => p.theme.colors.switcherHoverBg};
   }
 `;
 export const IconClickDark = styled(TbMoon)`
-  color: ${(p) => p.theme.colors.textColor};
+  color: ${(p) => p.theme.colors.headerTextColor};
+  /* background-color: ${(p) => p.theme.colors.switcherBg}; */
   font-size: 3.6rem;
   transition: 0.3s;
   padding: 0.6rem;
   border-radius: 50%;
 
   &:hover {
-    background-color: ${(p) => p.theme.colors.switcherBg};
+    background-color: ${(p) => p.theme.colors.switcherHoverBg};
   }
 `;

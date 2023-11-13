@@ -15,9 +15,10 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { FaBookReader } from "react-icons/fa";
 import ThemeButton from "../ThemeButton/ThemeButton";
+import { Link, ToolbarStyled } from "./HeaderNavigation.styled";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contacts"];
+const navItems = ["Home", "Contacts"];
 
 function DrawerAppBar(props) {
   const { window } = props;
@@ -62,7 +63,7 @@ function DrawerAppBar(props) {
     <Box sx={{ display: "flex" }}>
       {/* <CssBaseline /> */}
       <AppBar component="nav">
-        <Toolbar>
+        <ToolbarStyled>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -95,23 +96,32 @@ function DrawerAppBar(props) {
               justifyContent: { xs: "end", sm: "start" },
             }}
           >
-            <Button color="inherit">Login</Button>
-            <Button color="inherit">Register</Button>
+            <Link to="/login">
+              <Button color="inherit">Sign In</Button>
+            </Link>
+            <Link to="/register">
+              <Button color="inherit">Sign Up</Button>
+            </Link>
           </Box>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
-                {item}
-              </Button>
-            ))}
+            <Link to="/">
+              <Button color="inherit">Home</Button>
+            </Link>
+            <Link to="/contacts">
+              <Button color="inherit">Contacts</Button>
+            </Link>
+            {/* <Button color="inherit">Home</Button> */}
+            {/* <Button color="inherit" disabled>
+              Contacts
+            </Button> */}
           </Box>
-          <Box>
+          <Box style={{ marginLeft: 5 }}>
             <ThemeButton
               toggleTheme={props.toggleTheme}
               isDarkTheme={props.isDarkTheme}
             />
           </Box>
-        </Toolbar>
+        </ToolbarStyled>
       </AppBar>
       <nav>
         <Drawer
