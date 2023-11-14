@@ -13,6 +13,10 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 62.5%;
   }
 
+  @media(max-width:980px) {
+    font-size: 55%;
+  }
+
   body {
     display: flex;
   justify-content: center;
@@ -39,8 +43,18 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+  
+  h3 {
+    margin: 0;
+    padding: 0;
+  }
 
   ul {
     list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 `;

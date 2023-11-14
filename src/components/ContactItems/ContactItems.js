@@ -9,6 +9,7 @@ import {
   ContactIcon,
   ContactDelete,
 } from "./ContactItems.styled";
+import Tooltip from "@mui/material/Tooltip";
 
 export default function ContactItems({ contact, id, phoneNumber }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -33,9 +34,11 @@ export default function ContactItems({ contact, id, phoneNumber }) {
         <ContactIcon />
         {contact}: {phoneNumber}
       </P>
-      <Button onClick={handleDelete}>
-        <ContactDelete />
-      </Button>
+      <Tooltip title="Delete">
+        <Button onClick={handleDelete}>
+          <ContactDelete />
+        </Button>
+      </Tooltip>
       <DeleteConfirmationModal
         isOpen={isModalOpen}
         onRequestClose={handleCloseModal}

@@ -13,10 +13,6 @@ import {
 import storage from "redux-persist/lib/storage";
 import { authReducer } from "./auth/slice";
 
-// export const store = configureStore({
-//   reducer: { contacts: contactsReducer },
-// });
-
 const authPersistConfig = {
   key: "auth",
   storage,

@@ -1,14 +1,11 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-// import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -21,7 +18,7 @@ import AuthNav from "../AuthNav/AuthNav";
 import UserMenu from "../UserMenu/UserMenu";
 
 const drawerWidth = 240;
-const navItems = ["Home", "Contacts"];
+// const navItems = ["Home", "Contacts"];
 
 function DrawerAppBar(props) {
   const { isLoggedIn } = useAuth();
@@ -70,23 +67,6 @@ function DrawerAppBar(props) {
             </Link>
           </ListItem>
         )}
-        {/* {isLoggedIn ? (
-          <ListItem disablePadding>
-            <UserMenu />
-          </ListItem>
-        ) : (
-          <ListItem disablePadding>
-            <AuthNav />
-          </ListItem>
-        )} */}
-
-        {/* {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))} */}
       </List>
     </Box>
   );
@@ -96,7 +76,6 @@ function DrawerAppBar(props) {
 
   return (
     <Box sx={{ display: "flex" }}>
-      {/* <CssBaseline /> */}
       <AppBar component="nav">
         <ToolbarStyled>
           <IconButton
@@ -132,10 +111,6 @@ function DrawerAppBar(props) {
                 <Button color="inherit">Contacts</Button>
               </Link>
             )}
-            {/* <Button color="inherit">Home</Button> */}
-            {/* <Button color="inherit" disabled>
-              Contacts
-            </Button> */}
           </Box>
           <Box style={{ display: "flex", alignItems: "center" }}>
             {isLoggedIn ? <UserMenu /> : <AuthNav />}

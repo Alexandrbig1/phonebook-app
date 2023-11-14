@@ -13,7 +13,6 @@ export const TextWrap = styled.div`
 
 export const SpanName = styled.span`
   color: inherit;
-  /* font-family: "Roboto", sans-serif; */
   font-family: "Raleway", sans-serif;
   font-size: 16px;
   font-style: normal;
