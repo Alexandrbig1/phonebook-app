@@ -1,4 +1,4 @@
-# **Phonebook** with Redux
+# **CONNECTCONTACTS** Your Personal Phonebook App
 <img align="right" src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="100"/>
 
 ## This project is a part of my Fullstack Bootcamp's React module, serving as the final project for this module. The React Phonebook allows users to manage their contacts by saving them to a backend server. Users can sign up, sign in, and access their saved contacts through the application.
