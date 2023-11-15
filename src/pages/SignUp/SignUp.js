@@ -1,45 +1,50 @@
 import * as React from "react";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
+import { BsFillEyeSlashFill, BsFillEyeFill } from "react-icons/bs";
+import {
+  BoxSignUpStyled,
+  ContainerSignUpStyled,
+  EyeIconSignUpWrapper,
+  EyePasswordSignUpWrap,
+  LinkSignUpStyled,
+  SignUpButtonEl,
+  SignUpButtonStyled,
+  SignUpIcon,
+  SignUpLabelCheckbox,
+  SignUpStyledCheckbox,
+  SignUpWrapper,
+  TextFieldSignUpStyled,
+  TypoSignUpStyled,
+  TypoTitleSignUpStyled,
+} from "./SignUp.styled";
 
 function Copyright(props) {
   return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link
+    <TypoSignUpStyled variant="body2" align="center" {...props}>
+      {"Alex Smagin © "}
+      <LinkSignUpStyled
         color="inherit"
         href="https://alexandrbig1.github.io/goit-react-hw-08-phonebook/"
       >
         PhoneBook
-      </Link>{" "}
+      </LinkSignUpStyled>{" "}
       {new Date().getFullYear()}
       {"."}
-    </Typography>
+    </TypoSignUpStyled>
   );
 }
 
-const defaultTheme = createTheme();
-
 export default function SignUp() {
+  const [showPassword, setShowPassword] = React.useState(false);
   const dispatch = useDispatch();
+
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -58,90 +63,85 @@ export default function SignUp() {
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
+    <ContainerSignUpStyled>
+      <BoxSignUpStyled>
+        <SignUpWrapper>
+          <SignUpIcon />
+        </SignUpWrapper>
+        <TypoTitleSignUpStyled component="h1" variant="h5">
+          Sign up
+        </TypoTitleSignUpStyled>
         <Box
+          component="form"
+          noValidate
+          onSubmit={handleSubmit}
           sx={{
-            marginTop: 8,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
+            mt: 1,
+            width: { sm: "396px", xs: "328px" },
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign up
-          </Typography>
-          <Box
-            component="form"
-            noValidate
-            onSubmit={handleSubmit}
-            sx={{ mt: 3 }}
-          >
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <TextField
-                  autoComplete="given-name"
-                  name="name"
-                  required
-                  fullWidth
-                  id="name"
-                  label="Full Name"
-                  autoFocus
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <TextFieldSignUpStyled
+                autoComplete="given-name"
+                name="name"
+                required
+                fullWidth
+                id="name"
+                label="Full Name"
+                autoFocus
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextFieldSignUpStyled
+                required
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                autoComplete="email"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <EyePasswordSignUpWrap>
+                <TextFieldSignUpStyled
+                  label="Password"
+                  variant="outlined"
+                  margin="normal"
                   required
                   fullWidth
                   name="password"
-                  label="Password"
-                  type="password"
                   id="password"
                   autoComplete="new-password"
+                  type={showPassword ? "text" : "password"}
                 />
-              </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={
-                    <Checkbox value="allowExtraEmails" color="primary" />
-                  }
-                  label="I want to receive inspiration, marketing promotions and updates via email."
-                />
-              </Grid>
+                <EyeIconSignUpWrapper onClick={handleClickShowPassword}>
+                  {showPassword ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}
+                </EyeIconSignUpWrapper>
+              </EyePasswordSignUpWrap>
             </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
+            <Grid item xs={12}>
+              <SignUpLabelCheckbox>
+                <SignUpStyledCheckbox value="allowExtraEmails" />I want to
+                receive inspiration, marketing promotions and updates via email.
+              </SignUpLabelCheckbox>
+            </Grid>
+          </Grid>
+          <SignUpButtonStyled>
+            <SignUpButtonEl type="submit" color="inherit">
               Sign Up
-            </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link href="#" variant="body2">
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
+            </SignUpButtonEl>
+          </SignUpButtonStyled>
+          <Grid container justifyContent="flex-end">
+            <Grid item>
+              <Link href="#/login" variant="body2">
+                Already have an account? Sign in
+              </Link>
             </Grid>
-          </Box>
+          </Grid>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
-      </Container>
-    </ThemeProvider>
+      </BoxSignUpStyled>
+      <Copyright sx={{ mt: 5 }} />
+    </ContainerSignUpStyled>
   );
 }

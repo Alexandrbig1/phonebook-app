@@ -1,15 +1,15 @@
-import { Link } from "./AuthNav.styled";
+import { LinkWrapper, SignInLink, SignUpLink } from "./AuthNav.styled";
 import Button from "@mui/material/Button";
 
 export default function AuthNav() {
   return (
-    <>
-      <Link to="/login">
+    <LinkWrapper>
+      <SignInLink to="/login">
         <Button color="inherit">Sign In</Button>
-      </Link>
-      <Link to="/register">
+      </SignInLink>
+      <SignUpLink to="/register">
         <Button color="inherit">Sign Up</Button>
-      </Link>
-    </>
+      </SignUpLink>
+    </LinkWrapper>
   );
 }

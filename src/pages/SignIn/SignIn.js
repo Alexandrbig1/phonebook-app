@@ -1,45 +1,50 @@
 import * as React from "react";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useDispatch } from "react-redux";
 import { logIn } from "../../redux/auth/operations";
+import { BsFillEyeSlashFill, BsFillEyeFill } from "react-icons/bs";
+import {
+  BoxStyled,
+  ButtonEl,
+  ButtonStyled,
+  ContainerStyled,
+  EyeIconWrapper,
+  LabelCheckbox,
+  LinkStyled,
+  SignInIcon,
+  SignInWrapper,
+  StyledCheckbox,
+  TextFieldStyled,
+  TypoStyled,
+  TypoTitleStyled,
+  EyePasswordWrap,
+} from "./SignIn.styled";
 
 function Copyright(props) {
   return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link
+    <TypoStyled variant="body2" align="center" {...props}>
+      {"Alex Smagin © "}
+      <LinkStyled
         color="inherit"
         href="https://alexandrbig1.github.io/goit-react-hw-08-phonebook/"
       >
         PhoneBook
-      </Link>{" "}
+      </LinkStyled>{" "}
       {new Date().getFullYear()}
       {"."}
-    </Typography>
+    </TypoStyled>
   );
 }
 
-const defaultTheme = createTheme();
-
 export default function SignIn() {
+  const [showPassword, setShowPassword] = React.useState(false);
   const dispatch = useDispatch();
+
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -54,77 +59,73 @@ export default function SignIn() {
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
+    <ContainerStyled>
+      <BoxStyled>
+        <SignInWrapper>
+          <SignInIcon />
+        </SignInWrapper>
+        <TypoTitleStyled component="h1" variant="h5">
+          Sign in
+        </TypoTitleStyled>
         <Box
+          component="form"
+          onSubmit={handleSubmit}
+          noValidate
           sx={{
-            marginTop: 8,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
+            mt: 1,
+            width: { sm: "396px", xs: "328px" },
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign in
-          </Typography>
-          <Box
-            component="form"
-            onSubmit={handleSubmit}
-            noValidate
-            sx={{ mt: 1 }}
-          >
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField
+          <TextFieldStyled
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Email Address"
+            name="email"
+            autoComplete="email"
+            autoFocus
+          />
+          <EyePasswordWrap>
+            <TextFieldStyled
+              label="Password"
+              variant="outlined"
               margin="normal"
               required
               fullWidth
               name="password"
-              label="Password"
-              type="password"
               id="password"
               autoComplete="current-password"
+              type={showPassword ? "text" : "password"}
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
+            <EyeIconWrapper onClick={handleClickShowPassword}>
+              {showPassword ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}
+            </EyeIconWrapper>
+          </EyePasswordWrap>
+          <LabelCheckbox>
+            <StyledCheckbox value="remember" />
+            Remember me
+          </LabelCheckbox>
+          <ButtonStyled>
+            <ButtonEl type="submit" color="inherit">
               Sign In
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
+            </ButtonEl>
+          </ButtonStyled>
+          <Grid container>
+            <Grid item xs>
+              <Link href="#" variant="body2">
+                Forgot password?
+              </Link>
             </Grid>
-          </Box>
+            <Grid item>
+              <Link href="#/register" variant="body2">
+                {"Don't have an account? Sign Up"}
+              </Link>
+            </Grid>
+          </Grid>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
-      </Container>
-    </ThemeProvider>
+      </BoxStyled>
+      <Copyright sx={{ mt: 8, mb: 4 }} />
+    </ContainerStyled>
   );
 }

@@ -21,17 +21,12 @@ import {
   AppButtonOpen,
   AppButtonClose,
 } from "../../components/AppButton/AppButton";
-// import DrawerAppBar from "../../components/HeaderNavigation/HeaderNavigation";
 
 export default function Contacts() {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
   const [isOpen, setIsOpen] = useState(false);
   const [initialLoading, setInitialLoading] = useState(true);
-  // const [isDarkTheme, setIsDarkTheme] = useState(() => {
-  //   const savedTheme = localStorage.getItem("theme");
-  //   return savedTheme === "light" ? false : true;
-  // });
 
   useEffect(() => {
     try {
@@ -50,16 +45,8 @@ export default function Contacts() {
     setIsOpen(contacts.length > 0);
   }, [contacts]);
 
-  // const toggleTheme = () => {
-  //   setIsDarkTheme((prevIsDarkTheme) => !prevIsDarkTheme);
-  //   localStorage.setItem("theme", isDarkTheme ? "light" : "dark");
-  // };
-
   return (
     <>
-      {/* <header>
-        <DrawerAppBar toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
-      </header> */}
       {initialLoading ? (
         <Loader />
       ) : (

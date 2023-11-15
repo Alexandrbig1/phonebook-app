@@ -18,7 +18,6 @@ import AuthNav from "../AuthNav/AuthNav";
 import UserMenu from "../UserMenu/UserMenu";
 
 const drawerWidth = 240;
-// const navItems = ["Home", "Contacts"];
 
 function DrawerAppBar(props) {
   const { isLoggedIn } = useAuth();
@@ -97,8 +96,10 @@ function DrawerAppBar(props) {
               marginRight: 1,
             }}
           >
-            <FaBookReader style={{ marginRight: 8 }} />
-            PhoneBook
+            <a href="/">
+              <FaBookReader style={{ marginRight: 8 }} />
+              PhoneBook
+            </a>
           </Typography>
           <Box
             sx={{ display: { xs: "none", sm: "flex" }, alignItems: "center" }}
@@ -112,7 +113,13 @@ function DrawerAppBar(props) {
               </Link>
             )}
           </Box>
-          <Box style={{ display: "flex", alignItems: "center" }}>
+          <Box
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginLeft: "0.8rem",
+            }}
+          >
             {isLoggedIn ? <UserMenu /> : <AuthNav />}
             <ThemeButton
               toggleTheme={props.toggleTheme}

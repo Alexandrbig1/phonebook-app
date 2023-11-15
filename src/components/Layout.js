@@ -1,21 +1,11 @@
 import { Outlet } from "react-router-dom";
 import { Suspense, useState } from "react";
-// import Loader from "./Loader/Loader";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
-
-// import {
-//   Nav,
-//   Header,
-//   Link,
-//   Logo,
-//   LogoLink,
-//   LogoText,
-//   LogoSpan,
-// } from "./Layout/Layout.styled";
 import DrawerAppBar from "./HeaderNavigation/HeaderNavigation";
+import Loader from "./Loader/Loader";
 
 const theme = {
   light: {
@@ -36,9 +26,12 @@ const theme = {
       inputBg: "#f8f9fa",
       modalBg: "#6c757d",
       headerColor: "#1a76d2",
+      btnHoverThemeColor: "#176abd",
       headerTextColor: "#F3F3F3",
       homeBgColor: "rgba(233, 236, 239, 0.7)",
       cardBgColor: "rgba(255, 255, 255, 0.7)",
+      signIn: "#0096c7",
+      signUp: "#ff5400",
     },
   },
   dark: {
@@ -59,9 +52,12 @@ const theme = {
       inputBg: "#050505",
       modalBg: "#1E1E1E",
       headerColor: "#4C309C",
+      btnHoverThemeColor: "#5e45a6",
       headerTextColor: "#F3F3F3",
       homeBgColor: "rgba(30, 30, 30, 0.7)",
       cardBgColor: "rgba(0, 0, 0, 0.7)",
+      signIn: "#9d4edd",
+      signUp: "#ff5400",
     },
   },
 };
@@ -79,36 +75,10 @@ export default function Layout() {
     <ThemeProvider theme={isDarkTheme ? theme.dark : theme.light}>
       <GlobalStyle />
       <DrawerAppBar toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
-
-      {/* <Header>
-        <LogoLink to="/">
-          <Logo />
-          <LogoText>
-            Movies <LogoSpan>API</LogoSpan>
-          </LogoText>
-        </LogoLink>
-
-        <Nav>
-          <Link to="/">Home</Link>
-          <Link to="/movies">Movies</Link>
-        </Nav>
-      </Header> */}
       <main>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
-        {/* <ToastContainer
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable={false}
-          pauseOnHover={false}
-          theme="light"
-        /> */}
       </main>
       <ToastContainer />
     </ThemeProvider>

@@ -41,7 +41,7 @@ export const AvatarTextContainer = styled.div`
 
 export const LinkedinIcon = styled(AiFillLinkedin)`
   font-size: 3.2rem;
-  color: ${(p) => p.theme.colors.textColor};
+  color: ${(p) => p.theme.colors.headerTextColor};
   padding: 0.6rem;
   background-color: ${(p) => p.theme.colors.switcherBg};
   border-radius: 12rem;
@@ -53,7 +53,7 @@ export const LinkedinIcon = styled(AiFillLinkedin)`
 `;
 export const GithubIcon = styled(AiFillGithub)`
   font-size: 3.2rem;
-  color: ${(p) => p.theme.colors.textColor};
+  color: ${(p) => p.theme.colors.headerTextColor};
   padding: 0.6rem;
   background-color: ${(p) => p.theme.colors.switcherBg};
   border-radius: 12rem;
@@ -65,7 +65,7 @@ export const GithubIcon = styled(AiFillGithub)`
 `;
 export const DribbleIcon = styled(FaDribbble)`
   font-size: 3.2rem;
-  color: ${(p) => p.theme.colors.textColor};
+  color: ${(p) => p.theme.colors.headerTextColor};
   padding: 0.6rem;
   background-color: ${(p) => p.theme.colors.switcherBg};
   border-radius: 12rem;
@@ -77,7 +77,7 @@ export const DribbleIcon = styled(FaDribbble)`
 `;
 export const TwitterIcon = styled(FaTwitter)`
   font-size: 3.2rem;
-  color: ${(p) => p.theme.colors.textColor};
+  color: ${(p) => p.theme.colors.headerTextColor};
   padding: 0.6rem;
   background-color: ${(p) => p.theme.colors.switcherBg};
   border-radius: 12rem;
@@ -89,7 +89,7 @@ export const TwitterIcon = styled(FaTwitter)`
 `;
 
 export const CardTitle = styled.h3`
-  color: ${(p) => p.theme.colors.textColor};
+  color: ${(p) => p.theme.colors.headerTextColor};
   font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
   font-style: normal;
@@ -98,7 +98,7 @@ export const CardTitle = styled.h3`
 `;
 
 export const CardText = styled.p`
-  color: ${(p) => p.theme.colors.textColor};
+  color: ${(p) => p.theme.colors.headerTextColor};
   font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
   font-style: normal;

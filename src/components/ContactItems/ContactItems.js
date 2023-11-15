@@ -34,7 +34,7 @@ export default function ContactItems({ contact, id, phoneNumber }) {
         <ContactIcon />
         {contact}: {phoneNumber}
       </P>
-      <Tooltip title="Delete">
+      <Tooltip title="Delete" placement="right" arrow>
         <Button onClick={handleDelete}>
           <ContactDelete />
         </Button>
