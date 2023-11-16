@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  min-height: calc(100vh - 6.4rem);
+  min-height: 100vh;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -43,14 +43,15 @@ export const TitleWrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1.2rem;
-  margin-bottom: ${(props) => (props.open ? "0" : "178.19px")};
+  margin-bottom: ${(props) => (props.open ? "0" : "18rem")};
 `;
 
 export const FormWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 396px;
+  width: 39.6rem;
+  height: ${(props) => (props.open ? "18rem" : "0")};
   padding: ${(props) => (props.open ? "2.4rem 2.4rem 3.6rem" : "0")};
   background-color: ${(p) => p.theme.colors.phoneBookContainer};
   border-radius: 12px;
@@ -79,13 +80,13 @@ export const ContactsDiv = styled.div`
   gap: 12px;
 `;
 
-export const Wrapper = styled.div`
-  width: 340px;
-  padding: ${(props) => (props.open ? "20px" : "0")};
-  background-color: ${(p) => p.theme.colors.mainBgColor};
-  border-radius: 12px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-`;
+// export const Wrapper = styled.div`
+//   width: 340px;
+//   padding: ${(props) => (props.open ? "20px" : "0")};
+//   background-color: ${(p) => p.theme.colors.mainBgColor};
+//   border-radius: 12px;
+//   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+//   display: flex;
+//   flex-direction: column;
+//   gap: 24px;
+// `;

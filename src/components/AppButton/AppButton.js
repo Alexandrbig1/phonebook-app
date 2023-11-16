@@ -1,25 +1,17 @@
 import styled from "styled-components";
-import { BiCaretDownCircle, BiCaretUpCircle } from "react-icons/bi";
+import { FaRegAddressCard } from "react-icons/fa";
 
 export const AppButton = styled.button`
   border: none;
   background: none;
   cursor: pointer;
-  font-size: 40px;
+  font-size: 32px;
   color: inherit;
 `;
 
-export const AppButtonOpen = styled(BiCaretDownCircle)`
+export const AppButtonOpen = styled(FaRegAddressCard)`
   color: ${(p) => p.theme.colors.textColor};
-  font-size: 32px;
-
-  &:hover {
-    color: ${(p) => p.theme.colors.contactBtn};
-  }
-`;
-export const AppButtonClose = styled(BiCaretUpCircle)`
-  color: ${(p) => p.theme.colors.textColor};
-  font-size: 32px;
+  font-size: 24px;
 
   &:hover {
     color: ${(p) => p.theme.colors.contactBtn};

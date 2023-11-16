@@ -14,6 +14,7 @@ import { HeaderNav, Link, ToolbarStyled } from "./HeaderNavigation.styled";
 import { useAuth } from "../../hooks";
 import AuthNav from "../AuthNav/AuthNav";
 import UserMenu from "../UserMenu/UserMenu";
+import { NavLink } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -46,8 +47,10 @@ function DrawerAppBar(props) {
             justifyContent: "center",
           }}
         >
-          <FaBookReader />
-          PhoneBook
+          <NavLink to="/">
+            <FaBookReader style={{ marginRight: 8 }} />
+            PhoneBook
+          </NavLink>
         </div>
       </Typography>
       <Divider />
@@ -94,10 +97,10 @@ function DrawerAppBar(props) {
               marginRight: 1,
             }}
           >
-            <a href="/">
+            <NavLink to="/">
               <FaBookReader style={{ marginRight: 8 }} />
               PhoneBook
-            </a>
+            </NavLink>
           </Typography>
           <Box
             sx={{ display: { xs: "none", sm: "flex" }, alignItems: "center" }}

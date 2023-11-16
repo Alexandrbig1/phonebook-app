@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { deleteContact } from "../../redux/operations";
 import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal";
 import { useEffect, useState } from "react";
+import Tooltip from "@mui/material/Tooltip";
 import {
   Button,
   List,
@@ -11,8 +12,9 @@ import {
   ContactListWrapper,
   ContactAvatarWrapper,
   AvatarImgIcon,
+  PhoneIcon,
+  PhoneWrapper,
 } from "./ContactItems.styled";
-import Tooltip from "@mui/material/Tooltip";
 
 function generateRandomImg() {
   const types = [
@@ -74,7 +76,10 @@ export default function ContactItems({ contact, id, phoneNumber }) {
         <P>{contact}</P>
       </ContactAvatarWrapper>
       <ContactListWrapper>
-        <P>{phoneNumber}</P>
+        <PhoneWrapper>
+          <PhoneIcon />
+          <P>{phoneNumber}</P>
+        </PhoneWrapper>
         <Tooltip title="Delete" placement="right" arrow>
           <Button onClick={handleDelete}>
             <ContactDelete />

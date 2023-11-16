@@ -25,7 +25,8 @@ export const FilterInput = styled.input`
   }
 
   &:focus-within {
-    outline: 1px solid rgba(212, 143, 143, 0.658);
+    /* outline: 1px solid rgba(212, 143, 143, 0.658); */
+    outline: 1px solid rgba(143, 152, 212, 0.658);
     box-shadow: 0 2px 5px 1px ${(p) => p.theme.colors.inputHover};
   }
 

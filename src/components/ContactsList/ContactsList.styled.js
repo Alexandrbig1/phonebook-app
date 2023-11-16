@@ -5,7 +5,6 @@ export const Menu = styled.ul`
   flex-direction: column;
   gap: 0.1rem;
   width: 100%;
-  /* max-height: 19.7rem; */
   overflow: scroll;
 `;
 
@@ -16,4 +15,6 @@ export const Item = styled.li`
   font-style: normal;
   font-weight: 300;
   line-height: 1.28;
+  width: 100%;
+  text-align: center;
 `;

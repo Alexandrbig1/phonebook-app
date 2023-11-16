@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { BsFillPersonVcardFill } from "react-icons/bs";
 import { MdOutlineDeleteForever } from "react-icons/md";
 import { FaUserAlt } from "react-icons/fa";
+import { FaPhone } from "react-icons/fa6";
 
 export const List = styled.li`
   display: grid;
@@ -45,6 +46,17 @@ export const P = styled.p`
   font-style: normal;
   font-weight: 600;
   line-height: 1.28;
+`;
+
+export const PhoneIcon = styled(FaPhone)`
+  font-size: 1.6rem;
+  color: #2f9e44;
+`;
+
+export const PhoneWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 `;
 
 export const ContactIcon = styled(BsFillPersonVcardFill)`

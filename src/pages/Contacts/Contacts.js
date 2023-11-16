@@ -10,20 +10,14 @@ import Loader from "../../components/Loader/Loader";
 import { fetchContacts } from "../../redux/operations";
 import Tooltip from "@mui/material/Tooltip";
 import Fade from "@mui/material/Fade";
-import {
-  AppButton,
-  AppButtonOpen,
-  AppButtonClose,
-} from "../../components/AppButton/AppButton";
+import { AppButton, AppButtonOpen } from "../../components/AppButton/AppButton";
 import {
   ContactsDiv,
   ContactsTitle,
   Container,
-  Wrapper,
   PhoneBookTitle,
   AppDiv,
   TitleWrapper,
-  PhoneBookTitleWrapper,
   FormWrapper,
 } from "./Contacts.styled";
 
@@ -67,22 +61,17 @@ export default function Contacts() {
                 placement="right"
               >
                 <AppButton onClick={() => setIsOpen(!isOpen)}>
-                  {isOpen ? <AppButtonClose /> : <AppButtonOpen />}
+                  <AppButtonOpen />
                 </AppButton>
               </Tooltip>
             ) : (
               <AppButton onClick={() => setIsOpen(!isOpen)}>
-                {isOpen ? <AppButtonClose /> : <AppButtonOpen />}
+                <AppButtonOpen />
               </AppButton>
             )}
           </TitleWrapper>
 
-          <FormWrapper open={isOpen}>
-            {/* <Wrapper open={isOpen}> */}
-            {isOpen && <FormSubmit />}
-          </FormWrapper>
-
-          {/* </Wrapper> */}
+          <FormWrapper open={isOpen}>{isOpen && <FormSubmit />}</FormWrapper>
 
           <AppDiv>
             {contacts.length !== 0 && (
