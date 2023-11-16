@@ -5,13 +5,40 @@
 
 ## Description
 
-The Contact Book App is a React application that allows users to manage their contacts. This project was created as a part of a module in a @GoIT Fullstack developer bootcamp, focusing on React, Redux, Redux Persist, and Redux Toolkit.
+ConnectContacts is a comprehensive full-stack phonebook app developed as the final project for the React module in @GoIT. Seamlessly manage your contacts with features like secure user authentication, cloud-based contact storage, and a responsive design. Explore the possibilities of the React ecosystem, including Redux, Redux Persist, Axios, Material UI, and more.
+Ready to elevate your contact management experience? Explore ConnectContacts today!
 
 ## Features
 
-- **User Authentication**: Users can sign up and sign in to the application.
-- **Contact Management**: Save, update, and delete contacts associated with the user's account.
-- **Intuitive Interface**: Simple and user-friendly interface for managing contacts.
+- **User Authentication and Authorization**: Sign up securely, Sign in, and manage your profile with JWT token-based authentication. User roles and permissions ensure data security.
+- **Persistent Storage with Redux Persist**: Enjoy a seamless experience with persistent user data stored on the backend and locally through Redux Persist.
+- **Contact Management in the Cloud**: Create a personalized contact list that can be accessed from anywhere. Add, delete, and search for contacts effortlessly.
+- **Responsive Design with Material UI and Styled Components**: ConnectContacts is designed to provide a consistent and visually appealing experience across various devices.
+- **Integration of React Ecosystem**: Utilizes React, Redux, React Routes, Axios for Web API interactions, Styled Components for styling, Material UI for UI components, React Icons for iconography, and React Avatars Dicebear for unique avatars.
+
+## User Guide
+
+* **Sign Up**: Create a new account by providing your details.
+* **Log In**: Use your credentials to log in to ConnectContacts.
+* **Profile**: Update your profile information, including your name, email, and password.
+* **Contacts**: Navigate to the Contacts page to manage your cloud-based contacts. Add, delete, and search for contacts by name.
+
+## Technologies Used
+- ![Alt text](https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black)
+- ![Alt text](https://img.shields.io/badge/Redux-764ABC.svg?style=for-the-badge&logo=Redux&logoColor=white)
+- Redux Persist
+- ![Alt text](https://img.shields.io/badge/Axios-5A29E4.svg?style=for-the-badge&logo=Axios&logoColor=white) (Web API)
+- ![Alt text](https://img.shields.io/badge/styledcomponents-DB7093.svg?style=for-the-badge&logo=styled-components&logoColor=white)
+- Material UI
+- React Icons
+- React Avatars Dicebear
+
+## Issues
+
+If you encounter any issues or have suggestions, please [open an issue](https://github.com/Alexandrbig1/goit-react-hw-08-phonebook/issues).
+
+## Acknowledgments
+Special thanks to [@GoIT](https://goit.global/us/) for the guidance and support throughout the development of ConnectContacts.
 
 ## Languages and Tools:
 <div align="center">  
