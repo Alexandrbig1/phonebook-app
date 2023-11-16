@@ -3,6 +3,8 @@
 
 ## This project is a part of my Fullstack Bootcamp's React module, serving as the final project for this module. The React Phonebook allows users to manage their contacts by saving them to a backend server. Users can sign up, sign in, and access their saved contacts through the application.
 
+[![GitHub last commit](https://img.shields.io/github/last-commit/Alexandrbig1/goit-react-hw-08-phonebook)](https://github.com/Alexandrbig1/goit-react-hw-08-phonebook/commits/main)
+
 ## Description
 
 ConnectContacts is a comprehensive full-stack phonebook app developed as the final project for the React module in @GoIT. Seamlessly manage your contacts with features like secure user authentication, cloud-based contact storage, and a responsive design. Explore the possibilities of the React ecosystem, including Redux, Redux Persist, Axios, Material UI, and more.
