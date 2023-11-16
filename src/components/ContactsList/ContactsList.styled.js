@@ -4,7 +4,8 @@ export const Menu = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 0.1rem;
-  max-height: 19.7rem;
+  width: 100%;
+  /* max-height: 19.7rem; */
   overflow: scroll;
 `;
 

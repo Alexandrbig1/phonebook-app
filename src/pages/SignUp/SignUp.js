@@ -5,6 +5,7 @@ import Box from "@mui/material/Box";
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
 import { BsFillEyeSlashFill, BsFillEyeFill } from "react-icons/bs";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import {
   BoxSignUpStyled,
   ContainerSignUpStyled,
@@ -21,6 +22,18 @@ import {
   TypoSignUpStyled,
   TypoTitleSignUpStyled,
 } from "./SignUp.styled";
+
+const customTheme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 550,
+      md: 960,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
+});
 
 function Copyright(props) {
   return (
@@ -63,85 +76,88 @@ export default function SignUp() {
   };
 
   return (
-    <ContainerSignUpStyled>
-      <BoxSignUpStyled>
-        <SignUpWrapper>
-          <SignUpIcon />
-        </SignUpWrapper>
-        <TypoTitleSignUpStyled component="h1" variant="h5">
-          Sign up
-        </TypoTitleSignUpStyled>
-        <Box
-          component="form"
-          noValidate
-          onSubmit={handleSubmit}
-          sx={{
-            mt: 1,
-            width: { sm: "396px", xs: "328px" },
-          }}
-        >
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <TextFieldSignUpStyled
-                autoComplete="given-name"
-                name="name"
-                required
-                fullWidth
-                id="name"
-                label="Full Name"
-                autoFocus
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextFieldSignUpStyled
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <EyePasswordSignUpWrap>
+    <ThemeProvider theme={customTheme}>
+      <ContainerSignUpStyled>
+        <BoxSignUpStyled>
+          <SignUpWrapper>
+            <SignUpIcon />
+          </SignUpWrapper>
+          <TypoTitleSignUpStyled component="h1" variant="h5">
+            Sign up
+          </TypoTitleSignUpStyled>
+          <Box
+            component="form"
+            noValidate
+            onSubmit={handleSubmit}
+            sx={{
+              mt: 1,
+              width: { sm: "396px", xs: "312px" },
+            }}
+          >
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
                 <TextFieldSignUpStyled
-                  label="Password"
-                  variant="outlined"
-                  margin="normal"
+                  autoComplete="given-name"
+                  name="name"
                   required
                   fullWidth
-                  name="password"
-                  id="password"
-                  autoComplete="new-password"
-                  type={showPassword ? "text" : "password"}
+                  id="name"
+                  label="Full Name"
+                  autoFocus
                 />
-                <EyeIconSignUpWrapper onClick={handleClickShowPassword}>
-                  {showPassword ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}
-                </EyeIconSignUpWrapper>
-              </EyePasswordSignUpWrap>
+              </Grid>
+              <Grid item xs={12}>
+                <TextFieldSignUpStyled
+                  required
+                  fullWidth
+                  id="email"
+                  label="Email Address"
+                  name="email"
+                  autoComplete="email"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <EyePasswordSignUpWrap>
+                  <TextFieldSignUpStyled
+                    label="Password"
+                    variant="outlined"
+                    margin="normal"
+                    required
+                    fullWidth
+                    name="password"
+                    id="password"
+                    autoComplete="new-password"
+                    type={showPassword ? "text" : "password"}
+                  />
+                  <EyeIconSignUpWrapper onClick={handleClickShowPassword}>
+                    {showPassword ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}
+                  </EyeIconSignUpWrapper>
+                </EyePasswordSignUpWrap>
+              </Grid>
+              <Grid item xs={12}>
+                <SignUpLabelCheckbox>
+                  <SignUpStyledCheckbox value="allowExtraEmails" />I want to
+                  receive inspiration, marketing promotions and updates via
+                  email.
+                </SignUpLabelCheckbox>
+              </Grid>
             </Grid>
-            <Grid item xs={12}>
-              <SignUpLabelCheckbox>
-                <SignUpStyledCheckbox value="allowExtraEmails" />I want to
-                receive inspiration, marketing promotions and updates via email.
-              </SignUpLabelCheckbox>
+            <SignUpButtonStyled>
+              <SignUpButtonEl type="submit" color="inherit">
+                Sign Up
+              </SignUpButtonEl>
+            </SignUpButtonStyled>
+            <Grid container justifyContent="flex-end">
+              <Grid item>
+                <Link href="#/login" variant="body2">
+                  Already have an account? Sign in
+                </Link>
+              </Grid>
             </Grid>
-          </Grid>
-          <SignUpButtonStyled>
-            <SignUpButtonEl type="submit" color="inherit">
-              Sign Up
-            </SignUpButtonEl>
-          </SignUpButtonStyled>
-          <Grid container justifyContent="flex-end">
-            <Grid item>
-              <Link href="#/login" variant="body2">
-                Already have an account? Sign in
-              </Link>
-            </Grid>
-          </Grid>
-        </Box>
-      </BoxSignUpStyled>
-      <Copyright sx={{ mt: 5 }} />
-    </ContainerSignUpStyled>
+          </Box>
+        </BoxSignUpStyled>
+        <Copyright sx={{ mt: 5 }} />
+      </ContainerSignUpStyled>
+    </ThemeProvider>
   );
 }

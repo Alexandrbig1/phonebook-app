@@ -1,4 +1,5 @@
 import { useState } from "react";
+import * as React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { nanoid } from "nanoid";
@@ -6,15 +7,17 @@ import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "../../redux/operations";
 import { selectContacts } from "../../redux/selectors";
+import Tooltip from "@mui/material/Tooltip";
 import {
   FormContactBtn,
   FormLabel,
   FormStyled,
   FormField,
-  FormError,
   FormHiUser,
   FormHiPhone,
   FormInputWrapper,
+  FormStyledWrapper,
+  FormError,
 } from "./FormSubmit.styled";
 
 export default function FormSubmit() {
@@ -62,6 +65,21 @@ export default function FormSubmit() {
     setPhone("");
   }
 
+  const positionRef = React.useRef({
+    x: 0,
+    y: 0,
+  });
+  const popperRef = React.useRef(null);
+  const areaRef = React.useRef(null);
+
+  const handleMouseMove = (event) => {
+    positionRef.current = { x: event.clientX, y: event.clientY };
+
+    if (popperRef.current != null) {
+      popperRef.current.update();
+    }
+  };
+
   const formSchema = Yup.object({
     name: Yup.string()
       .min(1, "Too Short Name!")
@@ -89,26 +107,54 @@ export default function FormSubmit() {
         });
       }}
     >
-      <FormStyled className="contact-form">
-        <FormLabel htmlFor="name">Name</FormLabel>
-        <FormInputWrapper>
-          <FormHiUser />
-          <FormField type="text" name="name" placeholder="John Doe" />
-        </FormInputWrapper>
+      <FormStyledWrapper>
+        <FormStyled>
+          <div>
+            <FormLabel htmlFor="name">Name</FormLabel>
+            <FormInputWrapper style={{ marginBottom: "1.4rem" }}>
+              <FormHiUser />
+              <FormField type="text" name="name" placeholder="John Doe" />
+              <FormError component="span" name="name" />
+            </FormInputWrapper>
 
-        <FormError component="span" name="name" />
+            <FormLabel htmlFor="phone">Number</FormLabel>
 
-        <FormLabel htmlFor="phone">Number</FormLabel>
-
-        <FormInputWrapper>
-          <FormHiPhone />
-          <FormField type="number" name="phone" placeholder="123 45 6789" />
-        </FormInputWrapper>
-
-        <FormError component="span" name="phone" />
-
-        <FormContactBtn type="submit">Add contact</FormContactBtn>
-      </FormStyled>
+            <FormInputWrapper>
+              <FormHiPhone />
+              <FormField type="number" name="phone" placeholder="123 45 6789" />
+              <FormError component="span" name="phone" />
+            </FormInputWrapper>
+          </div>
+          <div>
+            <Tooltip
+              title="Add Contact"
+              placement="top"
+              arrow
+              PopperProps={{
+                popperRef,
+                anchorEl: {
+                  getBoundingClientRect: () => {
+                    return new DOMRect(
+                      positionRef.current.x,
+                      areaRef.current.getBoundingClientRect().y,
+                      0,
+                      0
+                    );
+                  },
+                },
+              }}
+            >
+              <FormContactBtn
+                onMouseMove={handleMouseMove}
+                ref={areaRef}
+                type="submit"
+              >
+                Add contact
+              </FormContactBtn>
+            </Tooltip>
+          </div>
+        </FormStyled>
+      </FormStyledWrapper>
     </Formik>
   );
 }

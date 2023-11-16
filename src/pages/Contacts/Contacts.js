@@ -8,19 +8,24 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loader from "../../components/Loader/Loader";
 import { fetchContacts } from "../../redux/operations";
-import {
-  AppDiv,
-  AppTitleH1,
-  AppTitleH2,
-  AppContactsDiv,
-  AppContainer,
-  AppWrapper,
-} from "../../components/App.styled";
+import Tooltip from "@mui/material/Tooltip";
+import Fade from "@mui/material/Fade";
 import {
   AppButton,
   AppButtonOpen,
   AppButtonClose,
 } from "../../components/AppButton/AppButton";
+import {
+  ContactsDiv,
+  ContactsTitle,
+  Container,
+  Wrapper,
+  PhoneBookTitle,
+  AppDiv,
+  TitleWrapper,
+  PhoneBookTitleWrapper,
+  FormWrapper,
+} from "./Contacts.styled";
 
 export default function Contacts() {
   const dispatch = useDispatch();
@@ -50,28 +55,45 @@ export default function Contacts() {
       {initialLoading ? (
         <Loader />
       ) : (
-        <AppContainer>
-          <AppWrapper open={isOpen}>
-            <AppButton onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? <AppButtonClose /> : <AppButtonOpen />}
-            </AppButton>
-            <AppDiv>
-              {isOpen && (
-                <>
-                  <AppTitleH1>Phonebook</AppTitleH1>
-                  <FormSubmit />
-                  {contacts.length !== 0 && (
-                    <AppContactsDiv>
-                      <AppTitleH2>Contacts</AppTitleH2>
-                      <Filter />
-                      <ContactsList />
-                    </AppContactsDiv>
-                  )}
-                </>
-              )}
-            </AppDiv>
-          </AppWrapper>
-        </AppContainer>
+        <Container>
+          <TitleWrapper open={isOpen}>
+            <PhoneBookTitle>Phonebook</PhoneBookTitle>
+
+            {!isOpen ? (
+              <Tooltip
+                TransitionComponent={Fade}
+                TransitionProps={{ timeout: 600 }}
+                title="Open"
+                placement="right"
+              >
+                <AppButton onClick={() => setIsOpen(!isOpen)}>
+                  {isOpen ? <AppButtonClose /> : <AppButtonOpen />}
+                </AppButton>
+              </Tooltip>
+            ) : (
+              <AppButton onClick={() => setIsOpen(!isOpen)}>
+                {isOpen ? <AppButtonClose /> : <AppButtonOpen />}
+              </AppButton>
+            )}
+          </TitleWrapper>
+
+          <FormWrapper open={isOpen}>
+            {/* <Wrapper open={isOpen}> */}
+            {isOpen && <FormSubmit />}
+          </FormWrapper>
+
+          {/* </Wrapper> */}
+
+          <AppDiv>
+            {contacts.length !== 0 && (
+              <ContactsDiv>
+                <ContactsTitle>Contacts</ContactsTitle>
+                <Filter />
+                <ContactsList />
+              </ContactsDiv>
+            )}
+          </AppDiv>
+        </Container>
       )}
       <ToastContainer />
     </>

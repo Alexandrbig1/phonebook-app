@@ -2,7 +2,11 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.div`
   width: 100%;
-  height: 100vh;
+  min-height: calc(100vh - 6.4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   overflow-x: hidden;
   background: linear-gradient(
       ${(p) => p.theme.colors.homeBgColor},
@@ -12,7 +16,7 @@ export const HomeContainer = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 2.4rem;
+  padding: 2.4rem 0;
 
   @media (max-width: 800px) {
     padding: 2.4rem 1.2rem;
@@ -24,7 +28,6 @@ export const HomeWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100%;
   gap: 2.4rem;
   @media (max-width: 600px) {
     gap: 1.2rem;
@@ -72,8 +75,11 @@ export const HomeTitle = styled.h1`
   @media (max-width: 440px) {
     font-size: 36px;
   }
-  @media (max-width: 360px) {
+  @media (max-width: 374px) {
     font-size: 32px;
+  }
+  @media (max-width: 325px) {
+    font-size: 28px;
   }
 `;
 
@@ -89,6 +95,32 @@ export const HomeSubTitle = styled.h3`
   -webkit-background-clip: text;
   -webkit-text-stroke-width: 1px;
   text-align: end;
+  @media (max-width: 980px) {
+    font-size: 18px;
+    margin-top: -1rem;
+  }
+  @media (max-width: 800px) {
+    font-size: 16px;
+    margin-top: -0.8rem;
+  }
+  @media (max-width: 660px) {
+    /* font-size: 48px; */
+    margin-top: -0.6rem;
+  }
+  @media (max-width: 525px) {
+    font-size: 14px;
+    margin-top: -0.4rem;
+  }
+  @media (max-width: 440px) {
+    /* font-size: 36px; */
+  }
+  @media (max-width: 360px) {
+    font-size: 14px;
+  }
+  @media (max-width: 325px) {
+    font-size: 12px;
+    margin-top: -0.2rem;
+  }
 `;
 
 export const HomeText = styled.p`

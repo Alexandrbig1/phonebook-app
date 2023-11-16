@@ -5,6 +5,7 @@ import Box from "@mui/material/Box";
 import { useDispatch } from "react-redux";
 import { logIn } from "../../redux/auth/operations";
 import { BsFillEyeSlashFill, BsFillEyeFill } from "react-icons/bs";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import {
   BoxStyled,
   ButtonEl,
@@ -21,6 +22,18 @@ import {
   TypoTitleStyled,
   EyePasswordWrap,
 } from "./SignIn.styled";
+
+const customTheme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 550,
+      md: 960,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
+});
 
 function Copyright(props) {
   return (
@@ -59,73 +72,75 @@ export default function SignIn() {
   };
 
   return (
-    <ContainerStyled>
-      <BoxStyled>
-        <SignInWrapper>
-          <SignInIcon />
-        </SignInWrapper>
-        <TypoTitleStyled component="h1" variant="h5">
-          Sign in
-        </TypoTitleStyled>
-        <Box
-          component="form"
-          onSubmit={handleSubmit}
-          noValidate
-          sx={{
-            mt: 1,
-            width: { sm: "396px", xs: "328px" },
-          }}
-        >
-          <TextFieldStyled
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            autoFocus
-          />
-          <EyePasswordWrap>
+    <ThemeProvider theme={customTheme}>
+      <ContainerStyled>
+        <BoxStyled>
+          <SignInWrapper>
+            <SignInIcon />
+          </SignInWrapper>
+          <TypoTitleStyled component="h1" variant="h5">
+            Sign in
+          </TypoTitleStyled>
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            noValidate
+            sx={{
+              mt: 1,
+              width: { sm: "396px", xs: "328px" },
+            }}
+          >
             <TextFieldStyled
-              label="Password"
-              variant="outlined"
               margin="normal"
               required
               fullWidth
-              name="password"
-              id="password"
-              autoComplete="current-password"
-              type={showPassword ? "text" : "password"}
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              autoFocus
             />
-            <EyeIconWrapper onClick={handleClickShowPassword}>
-              {showPassword ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}
-            </EyeIconWrapper>
-          </EyePasswordWrap>
-          <LabelCheckbox>
-            <StyledCheckbox value="remember" />
-            Remember me
-          </LabelCheckbox>
-          <ButtonStyled>
-            <ButtonEl type="submit" color="inherit">
-              Sign In
-            </ButtonEl>
-          </ButtonStyled>
-          <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
+            <EyePasswordWrap>
+              <TextFieldStyled
+                label="Password"
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                id="password"
+                autoComplete="current-password"
+                type={showPassword ? "text" : "password"}
+              />
+              <EyeIconWrapper onClick={handleClickShowPassword}>
+                {showPassword ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}
+              </EyeIconWrapper>
+            </EyePasswordWrap>
+            <LabelCheckbox>
+              <StyledCheckbox value="remember" />
+              Remember me
+            </LabelCheckbox>
+            <ButtonStyled>
+              <ButtonEl type="submit" color="inherit">
+                Sign In
+              </ButtonEl>
+            </ButtonStyled>
+            <Grid container>
+              <Grid item xs>
+                <Link href="#" variant="body2">
+                  Forgot password?
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link href="#/register" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid>
             </Grid>
-            <Grid item>
-              <Link href="#/register" variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link>
-            </Grid>
-          </Grid>
-        </Box>
-      </BoxStyled>
-      <Copyright sx={{ mt: 8, mb: 4 }} />
-    </ContainerStyled>
+          </Box>
+        </BoxStyled>
+        <Copyright sx={{ mt: 8, mb: 4 }} />
+      </ContainerStyled>
+    </ThemeProvider>
   );
 }

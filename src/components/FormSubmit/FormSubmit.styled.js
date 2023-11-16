@@ -4,14 +4,18 @@ import { HiUser, HiPhone } from "react-icons/hi2";
 
 export const FormStyled = styled(Form)`
   display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: start;
+  align-items: end;
+  justify-content: space-between;
   gap: 4px;
 `;
 
+export const FormStyledWrapper = styled.div`
+  width: 100%;
+`;
+
 export const FormField = styled(Field)`
-  padding: 8px 12px 8px 24px;
+  padding: 8px 12px 8px 32px;
+  width: 220px;
   outline: none;
   border: none;
   border-radius: 4px;
@@ -21,12 +25,12 @@ export const FormField = styled(Field)`
   font-size: 1.4rem;
 
   &:hover {
-    box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.1);
+    outline: solid 1px ${(p) => p.theme.colors.inputHover};
   }
 
   &:focus-within {
     outline: 1px solid rgba(143, 152, 212, 0.658);
-    box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px 1px ${(p) => p.theme.colors.inputHover};
   }
 
   &::placeholder {
@@ -66,20 +70,23 @@ export const FormHiPhone = styled(HiPhone)`
 
 export const FormError = styled(ErrorMessage)`
   color: ${(p) => p.theme.colors.deleteBtn};
+  position: absolute;
+  bottom: -2.2rem;
+  right: 0;
+  color: ${(p) => p.theme.colors.deleteBtn};
+  font-size: 1.2rem;
 `;
 
 export const FormLabel = styled.label`
   color: ${(p) => p.theme.colors.textColor};
   font-family: "Roboto", sans-serif;
-  font-size: 14px;
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 400;
   line-height: 1.28;
 `;
 
 export const FormContactBtn = styled.button`
-  margin-top: 0.4rem;
-  margin-bottom: 0.4rem;
   border: none;
   outline: none;
   padding: 8px 20px;
@@ -87,7 +94,7 @@ export const FormContactBtn = styled.button`
   cursor: pointer;
   background-color: ${(p) => p.theme.colors.contactBtn};
   transition: 0.3s;
-  color: ${(p) => p.theme.colors.textColor};
+  color: ${(p) => p.theme.colors.headerTextColor};
   font-family: "Roboto", sans-serif;
   font-size: 12px;
   font-style: normal;
@@ -95,7 +102,7 @@ export const FormContactBtn = styled.button`
   line-height: normal;
 
   &:hover {
-    background-color: #5199fe;
+    background-color: ${(p) => p.theme.colors.contactHoverBtn};
   }
 
   &:active {

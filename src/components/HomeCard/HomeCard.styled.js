@@ -74,8 +74,15 @@ export const CardsTextWrapper = styled.ul`
 
 export const CardsTextItems = styled.li`
   width: 100%;
-  max-height: 28rem;
+  min-height: 24rem;
+  @media (max-width: 1300px) {
+    min-height: 28rem;
+  }
+  @media (max-width: 1030px) {
+    min-height: 22rem;
+  }
   @media (max-width: 450px) {
     margin-bottom: 1.2rem;
+    min-height: 100%;
   }
 `;

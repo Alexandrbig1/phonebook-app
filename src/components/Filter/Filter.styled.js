@@ -21,12 +21,12 @@ export const FilterInput = styled.input`
   font-size: 1.4rem;
 
   &:hover {
-    box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.1);
+    outline: solid 1px ${(p) => p.theme.colors.inputHover};
   }
 
   &:focus-within {
     outline: 1px solid rgba(212, 143, 143, 0.658);
-    box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px 1px ${(p) => p.theme.colors.inputHover};
   }
 
   &::placeholder {
@@ -42,7 +42,7 @@ export const FilterInput = styled.input`
 export const FilterLabel = styled.label`
   color: ${(p) => p.theme.colors.textColor};
   font-family: "Roboto", sans-serif;
-  font-size: 14px;
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 400;
   line-height: 1.28;

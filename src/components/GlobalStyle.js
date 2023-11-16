@@ -18,12 +18,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
   background-color: ${(p) => p.theme.colors.mainBgColor};
   font-family: 'Roboto', sans-serif;
   /* font-family: 'Raleway', sans-serif; */

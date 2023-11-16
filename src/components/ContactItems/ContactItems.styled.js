@@ -1,13 +1,15 @@
 import styled from "styled-components";
 import { BsFillPersonVcardFill } from "react-icons/bs";
 import { MdOutlineDeleteForever } from "react-icons/md";
+import { FaUserAlt } from "react-icons/fa";
 
 export const List = styled.li`
-  display: flex;
+  display: grid;
   gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
   justify-content: space-between;
-  padding: 0 0.4rem;
+  padding: 1.2rem;
   border-radius: 0.2rem;
 
   &:nth-child(even) {
@@ -16,6 +18,21 @@ export const List = styled.li`
   &:nth-child(odd) {
     background-color: ${(p) => p.theme.colors.itemsOdd};
   }
+
+  &:hover {
+    background-color: ${(p) => p.theme.colors.listItemsHover};
+  }
+`;
+
+export const ContactListWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+export const ContactAvatarWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
 `;
 
 export const P = styled.p`
@@ -31,9 +48,21 @@ export const P = styled.p`
 `;
 
 export const ContactIcon = styled(BsFillPersonVcardFill)`
-  margin-right: 8px;
   width: 24px;
   height: 24px;
+`;
+
+export const AvatarImg = styled.img`
+  width: 4.8rem;
+  height: 4.8rem;
+  margin-right: 1.2rem;
+  border-radius: 50rem;
+`;
+export const AvatarImgIcon = styled(FaUserAlt)`
+  width: 4.8rem;
+  height: 4.8rem;
+  margin-right: 1.2rem;
+  border-radius: 50rem;
 `;
 
 export const Button = styled.button`

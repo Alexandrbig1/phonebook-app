@@ -1,5 +1,4 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
@@ -7,12 +6,11 @@ import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { FaBookReader } from "react-icons/fa";
 import ThemeButton from "../ThemeButton/ThemeButton";
-import { Link, ToolbarStyled } from "./HeaderNavigation.styled";
+import { HeaderNav, Link, ToolbarStyled } from "./HeaderNavigation.styled";
 import { useAuth } from "../../hooks";
 import AuthNav from "../AuthNav/AuthNav";
 import UserMenu from "../UserMenu/UserMenu";
@@ -74,8 +72,8 @@ function DrawerAppBar(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <AppBar component="nav">
+    <>
+      <HeaderNav>
         <ToolbarStyled>
           <IconButton
             color="inherit"
@@ -127,7 +125,7 @@ function DrawerAppBar(props) {
             />
           </Box>
         </ToolbarStyled>
-      </AppBar>
+      </HeaderNav>
       <nav>
         <Drawer
           container={container}
@@ -148,10 +146,7 @@ function DrawerAppBar(props) {
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
-      </Box>
-    </Box>
+    </>
   );
 }
 

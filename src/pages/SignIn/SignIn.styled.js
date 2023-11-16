@@ -9,7 +9,14 @@ import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
 
 export const ContainerStyled = styled(Container)`
-  max-width: 396px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: calc(100vh - 6.4rem);
+  padding: 1.2rem;
+  overflow-x: hidden;
 `;
 export const BoxStyled = styled(Box)`
   display: flex;
