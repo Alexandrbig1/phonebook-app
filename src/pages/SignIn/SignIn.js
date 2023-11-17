@@ -21,6 +21,7 @@ import {
   TypoStyled,
   TypoTitleStyled,
   EyePasswordWrap,
+  SignInErrorMessage,
 } from "./SignIn.styled";
 
 const customTheme = createTheme({
@@ -37,7 +38,12 @@ const customTheme = createTheme({
 
 function Copyright(props) {
   return (
-    <TypoStyled variant="body2" align="center" {...props}>
+    <TypoStyled
+      variant="body2"
+      align="center"
+      {...props}
+      style={{ fontSize: "1rem" }}
+    >
       {"Alex Smagin © "}
       <LinkStyled
         color="inherit"
@@ -54,6 +60,7 @@ function Copyright(props) {
 export default function SignIn() {
   const [showPassword, setShowPassword] = React.useState(false);
   const dispatch = useDispatch();
+  const [errors, setErrors] = React.useState({});
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -62,13 +69,36 @@ export default function SignIn() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.currentTarget;
-    dispatch(
-      logIn({
-        email: form.elements.email.value,
-        password: form.elements.password.value,
-      })
-    );
-    form.reset();
+
+    const email = form.elements.email.value;
+    const password = form.elements.password.value;
+
+    const newErrors = {};
+
+    if (email.trim().length === 0) {
+      newErrors.email = "Email address is required";
+    } else if (!/@/.test(email)) {
+      newErrors.email = "Please enter a valid email address";
+    } else if (!/\.[a-z]{2,}$/.test(email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+
+    if (password.length < 6 || password.length > 18) {
+      newErrors.password = "Password must be between 6 and 18 characters";
+    }
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length === 0) {
+      setErrors({});
+      dispatch(
+        logIn({
+          email: email,
+          password: password,
+        })
+      );
+      form.reset();
+    }
   };
 
   return (
@@ -86,20 +116,27 @@ export default function SignIn() {
             onSubmit={handleSubmit}
             noValidate
             sx={{
-              mt: 1,
-              width: { sm: "396px", xs: "328px" },
+              mt: 2,
+              width: { sm: "396px", xs: "312px" },
             }}
           >
-            <TextFieldStyled
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
+            <div style={{ position: "relative" }}>
+              <TextFieldStyled
+                margin="normal"
+                required
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                autoComplete="email"
+                autoFocus
+                error={errors.email ? true : false}
+              />
+              {errors.email && (
+                <SignInErrorMessage>{errors.email}</SignInErrorMessage>
+              )}
+            </div>
+
             <EyePasswordWrap>
               <TextFieldStyled
                 label="Password"
@@ -111,7 +148,11 @@ export default function SignIn() {
                 id="password"
                 autoComplete="current-password"
                 type={showPassword ? "text" : "password"}
+                error={errors.password ? true : false}
               />
+              {errors.password && (
+                <SignInErrorMessage>{errors.password}</SignInErrorMessage>
+              )}
               <EyeIconWrapper onClick={handleClickShowPassword}>
                 {showPassword ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}
               </EyeIconWrapper>
@@ -127,12 +168,16 @@ export default function SignIn() {
             </ButtonStyled>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link href="#" variant="body2" style={{ fontSize: "1rem" }}>
                   Forgot password?
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#/register" variant="body2">
+                <Link
+                  href="#/register"
+                  variant="body2"
+                  style={{ fontSize: "1rem" }}
+                >
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

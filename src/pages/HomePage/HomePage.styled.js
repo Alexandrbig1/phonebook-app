@@ -29,6 +29,7 @@ export const HomeWrapper = styled.div`
   align-items: center;
   width: 100%;
   gap: 2.4rem;
+
   @media (max-width: 600px) {
     gap: 1.2rem;
   }
@@ -45,6 +46,7 @@ export const HomeTitleWrapper = styled.div`
   @media (max-width: 980px) {
     max-width: 85%;
   }
+
   @media (max-width: 535px) {
     margin-bottom: 3.2rem;
   }
@@ -60,27 +62,41 @@ export const HomeTitle = styled.h1`
   line-height: 120%;
   text-transform: uppercase;
   text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+
   @media (max-width: 980px) {
     font-size: 64px;
   }
+
   @media (max-width: 800px) {
     font-size: 52px;
   }
+
   @media (max-width: 660px) {
     font-size: 48px;
   }
+
   @media (max-width: 525px) {
     font-size: 42px;
   }
+
   @media (max-width: 440px) {
     font-size: 36px;
   }
+
   @media (max-width: 374px) {
     font-size: 32px;
   }
+
   @media (max-width: 325px) {
     font-size: 28px;
   }
+`;
+
+export const HomeTitleSpan = styled.span`
+  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: ${(p) => p.theme.colors.headerColorLowOp};
+  -webkit-background-clip: text;
+  -webkit-text-stroke-width: 1px;
 `;
 
 export const HomeSubTitle = styled.h3`
@@ -95,28 +111,30 @@ export const HomeSubTitle = styled.h3`
   -webkit-background-clip: text;
   -webkit-text-stroke-width: 1px;
   text-align: end;
+
   @media (max-width: 980px) {
     font-size: 18px;
     margin-top: -1rem;
   }
+
   @media (max-width: 800px) {
     font-size: 16px;
     margin-top: -0.8rem;
   }
+
   @media (max-width: 660px) {
-    /* font-size: 48px; */
     margin-top: -0.6rem;
   }
+
   @media (max-width: 525px) {
     font-size: 14px;
     margin-top: -0.4rem;
   }
-  @media (max-width: 440px) {
-    /* font-size: 36px; */
-  }
+
   @media (max-width: 360px) {
     font-size: 14px;
   }
+
   @media (max-width: 325px) {
     font-size: 12px;
     margin-top: -0.2rem;

@@ -51,6 +51,7 @@ export const LinkedinIcon = styled(AiFillLinkedin)`
     background-color: ${(p) => p.theme.colors.switcherDarkBg};
   }
 `;
+
 export const GithubIcon = styled(AiFillGithub)`
   font-size: 3.2rem;
   color: ${(p) => p.theme.colors.headerTextColor};
@@ -63,6 +64,7 @@ export const GithubIcon = styled(AiFillGithub)`
     background-color: ${(p) => p.theme.colors.switcherDarkBg};
   }
 `;
+
 export const DribbleIcon = styled(FaDribbble)`
   font-size: 3.2rem;
   color: ${(p) => p.theme.colors.headerTextColor};
@@ -75,6 +77,7 @@ export const DribbleIcon = styled(FaDribbble)`
     background-color: ${(p) => p.theme.colors.switcherDarkBg};
   }
 `;
+
 export const TwitterIcon = styled(FaTwitter)`
   font-size: 3.2rem;
   color: ${(p) => p.theme.colors.headerTextColor};

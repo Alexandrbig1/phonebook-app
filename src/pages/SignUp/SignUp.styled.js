@@ -18,12 +18,14 @@ export const ContainerSignUpStyled = styled(Container)`
   padding: 1.2rem;
   overflow-x: hidden;
 `;
+
 export const BoxSignUpStyled = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 `;
+
 export const FormSignUp = styled(Box)`
   width: 100%;
 `;
@@ -59,7 +61,7 @@ export const SignUpButtonStyled = styled.div`
   border-radius: 0.4rem;
   color: ${(p) => p.theme.colors.headerTextColor};
   font-family: "Raleway", sans-serif;
-  font-size: 12px;
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -99,20 +101,24 @@ export const SignUpStyledCheckbox = styled(Checkbox)`
 export const LinkSignUpStyled = styled(Link)`
   color: ${(p) => p.theme.colors.textColor};
 `;
+
 export const TypoSignUpStyled = styled(Typography)`
   color: ${(p) => p.theme.colors.textColor};
 `;
+
 export const TypoTitleSignUpStyled = styled(Typography)`
   color: ${(p) => p.theme.colors.textColor};
 `;
+
 export const TextFieldSignUpStyled = styled(TextField)`
   input {
     color: ${(p) => p.theme.colors.textColor};
     background-color: ${(p) => p.theme.colors.inputBg};
     border-radius: 0.4rem;
     font-family: "Roboto", sans-serif;
+    font-size: 1.4rem;
     &:hover {
-      outline: inset 1px ${(p) => p.theme.colors.textColorLowOp};
+      box-shadow: 0px 0.3px 0px 0px ${(p) => p.theme.colors.textColorLowOp};
     }
     &:focus-within {
       outline: none;
@@ -139,4 +145,12 @@ export const EyeIconSignUpWrapper = styled.span`
   &:hover {
     cursor: pointer;
   }
+`;
+
+export const ErrorMessage = styled.p`
+  position: absolute;
+  top: -0.4rem;
+  right: 0;
+  font-size: 1.2rem;
+  color: ${(p) => p.theme.colors.deleteBtn};
 `;

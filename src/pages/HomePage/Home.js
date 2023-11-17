@@ -4,6 +4,7 @@ import {
   HomeSubTitle,
   HomeText,
   HomeTitle,
+  HomeTitleSpan,
   HomeTitleWrapper,
   HomeWrapper,
 } from "./HomePage.styled";
@@ -14,7 +15,9 @@ export default function HomePage() {
       <HomeWrapper>
         <HomeTitleWrapper>
           <div>
-            <HomeTitle>ConnectContacts</HomeTitle>
+            <HomeTitle>
+              <HomeTitleSpan>Connect</HomeTitleSpan>Contacts
+            </HomeTitle>
             <HomeSubTitle>Your Personal Phonebook App</HomeSubTitle>
           </div>
           <HomeText>

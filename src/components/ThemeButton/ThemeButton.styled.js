@@ -24,6 +24,7 @@ export const IconClickLight = styled(TbSunHigh)`
     background-color: ${(p) => p.theme.colors.switcherHoverBg};
   }
 `;
+
 export const IconClickDark = styled(TbMoon)`
   color: ${(p) => p.theme.colors.headerTextColor};
   font-size: 3.6rem;

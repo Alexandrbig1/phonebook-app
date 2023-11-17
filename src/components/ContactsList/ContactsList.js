@@ -5,9 +5,9 @@ import {
   selectContacts,
   selectIsLoading,
   selectFiltersContacts,
-} from "../../redux/selectors";
+} from "../../redux/contacts/selectors";
 import { useEffect } from "react";
-import { fetchContacts } from "../../redux/operations";
+import { fetchContacts } from "../../redux/contacts/operations";
 import Loader from "../Loader/Loader";
 
 export default function ContactsList() {
@@ -45,14 +45,24 @@ export default function ContactsList() {
       ) : visibleContacts.length > 0 ? (
         visibleContacts
           .sort((a, b) => a.name.localeCompare(b.name))
-          .map(({ name, phone, id }) => (
-            <ContactItems key={id} id={id} contact={name} phoneNumber={phone} />
+          .map(({ name, number, id }) => (
+            <ContactItems
+              key={id}
+              id={id}
+              contact={name}
+              phoneNumber={number}
+            />
           ))
       ) : contacts.length !== 0 ? (
         visibleContacts
           .sort((a, b) => a.name.localeCompare(b.name))
-          .map(({ name, phone, id }) => (
-            <ContactItems key={id} id={id} contact={name} phoneNumber={phone} />
+          .map(({ name, number, id }) => (
+            <ContactItems
+              key={id}
+              id={id}
+              contact={name}
+              phoneNumber={number}
+            />
           ))
       ) : (
         ""

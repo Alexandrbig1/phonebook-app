@@ -1,12 +1,12 @@
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/operations";
+import { deleteContact } from "../../redux/contacts/operations";
 import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal";
 import { useEffect, useState } from "react";
 import Tooltip from "@mui/material/Tooltip";
 import {
   Button,
   List,
-  P,
+  Text,
   ContactDelete,
   AvatarImg,
   ContactListWrapper,
@@ -73,12 +73,12 @@ export default function ContactItems({ contact, id, phoneNumber }) {
         ) : (
           <AvatarImg src={getAvatar(avatarType)} alt="avatar" />
         )}
-        <P>{contact}</P>
+        <Text>{contact}</Text>
       </ContactAvatarWrapper>
       <ContactListWrapper>
         <PhoneWrapper>
           <PhoneIcon />
-          <P>{phoneNumber}</P>
+          <Text>{phoneNumber}</Text>
         </PhoneWrapper>
         <Tooltip title="Delete" placement="right" arrow>
           <Button onClick={handleDelete}>

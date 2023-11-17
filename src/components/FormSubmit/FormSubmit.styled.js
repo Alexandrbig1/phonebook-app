@@ -7,6 +7,12 @@ export const FormStyled = styled(Form)`
   align-items: end;
   justify-content: space-between;
   gap: 4px;
+
+  @media (max-width: 400px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
 `;
 
 export const FormStyledWrapper = styled.div`
@@ -15,11 +21,11 @@ export const FormStyledWrapper = styled.div`
 
 export const FormField = styled(Field)`
   padding: 8px 12px 8px 32px;
-  width: 220px;
+  width: 22rem;
   outline: none;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
+  cursor: text cursor;
   color: ${(p) => p.theme.colors.textColor};
   background-color: ${(p) => p.theme.colors.inputBg};
   font-size: 1.4rem;
@@ -41,14 +47,14 @@ export const FormField = styled(Field)`
     font-weight: 400;
     line-height: 1.4;
   }
+
+  @media (max-width: 420px) {
+    width: 20rem;
+  }
 `;
 
 export const FormInputWrapper = styled.div`
   position: relative;
-
-  &:focus-within {
-    color: ${(p) => p.theme.colors.contactBtn};
-  }
 `;
 
 export const FormHiUser = styled(HiUser)`

@@ -2,11 +2,10 @@ import { useState } from "react";
 import * as React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { nanoid } from "nanoid";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
-import { addContact } from "../../redux/operations";
-import { selectContacts } from "../../redux/selectors";
+import { addContact } from "../../redux/contacts/operations";
+import { selectContacts } from "../../redux/contacts/selectors";
 import Tooltip from "@mui/material/Tooltip";
 import {
   FormContactBtn,
@@ -25,12 +24,12 @@ export default function FormSubmit() {
   const contacts = useSelector(selectContacts);
 
   const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
+  const [number, setNumber] = useState("");
 
   function handleSubmit(values) {
-    const newValue = { ...values, id: nanoid() };
+    const newValue = { ...values };
 
-    if (!newValue.name || !newValue.phone) {
+    if (!newValue.name || !newValue.number) {
       return;
     }
 
@@ -62,7 +61,7 @@ export default function FormSubmit() {
     }
 
     setName("");
-    setPhone("");
+    setNumber("");
   }
 
   const positionRef = React.useRef({
@@ -85,7 +84,7 @@ export default function FormSubmit() {
       .min(1, "Too Short Name!")
       .max(50, "Too Long Name!")
       .required("Please write a name!"),
-    phone: Yup.string()
+    number: Yup.string()
       .min(9, "Invalid Phone Number")
       .required("Please fill up the phone number!"),
   });
@@ -94,7 +93,7 @@ export default function FormSubmit() {
     <Formik
       initialValues={{
         name: name,
-        phone: phone,
+        number: number,
       }}
       validationSchema={formSchema}
       onSubmit={(values, actions) => {
@@ -102,7 +101,7 @@ export default function FormSubmit() {
         actions.resetForm({
           values: {
             name: name,
-            phone: phone,
+            number: number,
           },
         });
       }}
@@ -117,12 +116,16 @@ export default function FormSubmit() {
               <FormError component="span" name="name" />
             </FormInputWrapper>
 
-            <FormLabel htmlFor="phone">Number</FormLabel>
+            <FormLabel htmlFor="number">Number</FormLabel>
 
             <FormInputWrapper>
               <FormHiPhone />
-              <FormField type="number" name="phone" placeholder="123 45 6789" />
-              <FormError component="span" name="phone" />
+              <FormField
+                type="number"
+                name="number"
+                placeholder="123 45 6789"
+              />
+              <FormError component="span" name="number" />
             </FormInputWrapper>
           </div>
           <div>

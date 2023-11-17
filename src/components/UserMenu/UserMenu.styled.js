@@ -14,8 +14,12 @@ export const TextWrap = styled.div`
 export const SpanName = styled.span`
   color: inherit;
   font-family: "Raleway", sans-serif;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
+  @media (max-width: 330px) {
+    font-size: 1.4rem;
+  }
 `;

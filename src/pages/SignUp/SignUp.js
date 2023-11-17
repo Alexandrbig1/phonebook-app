@@ -9,6 +9,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import {
   BoxSignUpStyled,
   ContainerSignUpStyled,
+  ErrorMessage,
   EyeIconSignUpWrapper,
   EyePasswordSignUpWrap,
   LinkSignUpStyled,
@@ -37,7 +38,12 @@ const customTheme = createTheme({
 
 function Copyright(props) {
   return (
-    <TypoSignUpStyled variant="body2" align="center" {...props}>
+    <TypoSignUpStyled
+      variant="body2"
+      align="center"
+      {...props}
+      style={{ fontSize: "1rem" }}
+    >
       {"Alex Smagin © "}
       <LinkSignUpStyled
         color="inherit"
@@ -54,6 +60,7 @@ function Copyright(props) {
 export default function SignUp() {
   const [showPassword, setShowPassword] = React.useState(false);
   const dispatch = useDispatch();
+  const [errors, setErrors] = React.useState({});
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -62,17 +69,44 @@ export default function SignUp() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.currentTarget;
-    console.log(form.elements.name.value);
-    console.log(form.elements.email.value);
-    console.log(form.elements.password.value);
-    dispatch(
-      register({
-        name: form.elements.name.value,
-        email: form.elements.email.value,
-        password: form.elements.password.value,
-      })
-    );
-    form.reset();
+
+    const name = form.elements.name.value;
+    const email = form.elements.email.value;
+    const password = form.elements.password.value;
+
+    const newErrors = {};
+
+    if (name.trim().length === 0) {
+      newErrors.name = "Name is required";
+    } else if (name.trim().length < 3) {
+      newErrors.name = "Name must be at least 3 characters";
+    }
+
+    if (email.trim().length === 0) {
+      newErrors.email = "Email address is required";
+    } else if (!/@/.test(email)) {
+      newErrors.email = "Please enter a valid email address";
+    } else if (!/\.[a-z]{2,}$/.test(email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+
+    if (password.length < 6 || password.length > 18) {
+      newErrors.password = "Password must be between 6 and 18 characters";
+    }
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length === 0) {
+      setErrors({});
+      dispatch(
+        register({
+          name: name,
+          email: email,
+          password: password,
+        })
+      );
+      form.reset();
+    }
   };
 
   return (
@@ -90,12 +124,16 @@ export default function SignUp() {
             noValidate
             onSubmit={handleSubmit}
             sx={{
-              mt: 1,
+              mt: 2,
               width: { sm: "396px", xs: "312px" },
             }}
           >
             <Grid container spacing={2}>
-              <Grid item xs={12}>
+              <Grid
+                item
+                xs={12}
+                style={{ position: "relative", marginTop: "0.4rem" }}
+              >
                 <TextFieldSignUpStyled
                   autoComplete="given-name"
                   name="name"
@@ -104,9 +142,15 @@ export default function SignUp() {
                   id="name"
                   label="Full Name"
                   autoFocus
+                  error={errors.name ? true : false}
                 />
+                {errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
               </Grid>
-              <Grid item xs={12}>
+              <Grid
+                item
+                xs={12}
+                style={{ position: "relative", marginTop: "0.4rem" }}
+              >
                 <TextFieldSignUpStyled
                   required
                   fullWidth
@@ -114,9 +158,11 @@ export default function SignUp() {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  error={errors.email ? true : false}
                 />
+                {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
               </Grid>
-              <Grid item xs={12}>
+              <Grid item xs={12} style={{ position: "relative" }}>
                 <EyePasswordSignUpWrap>
                   <TextFieldSignUpStyled
                     label="Password"
@@ -128,7 +174,12 @@ export default function SignUp() {
                     id="password"
                     autoComplete="new-password"
                     type={showPassword ? "text" : "password"}
+                    error={errors.password ? true : false}
                   />
+                  {errors.password && (
+                    <ErrorMessage>{errors.password}</ErrorMessage>
+                  )}
+
                   <EyeIconSignUpWrapper onClick={handleClickShowPassword}>
                     {showPassword ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}
                   </EyeIconSignUpWrapper>
@@ -149,7 +200,11 @@ export default function SignUp() {
             </SignUpButtonStyled>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#/login" variant="body2">
+                <Link
+                  href="#/login"
+                  variant="body2"
+                  style={{ fontSize: "1rem" }}
+                >
                   Already have an account? Sign in
                 </Link>
               </Grid>

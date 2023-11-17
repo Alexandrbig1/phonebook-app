@@ -1,6 +1,5 @@
 import * as React from "react";
 import Avatar from "@mui/joy/Avatar";
-
 import {
   CardContentStyled,
   CardStyled,
@@ -37,7 +36,6 @@ export default function BioCard() {
             </CardText>
           </AvatarTextContainer>
         </CardContentWrapper>
-
         <IconsWrapper>
           <LinkIcon
             href="https://www.linkedin.com/in/alex-smagin29/"

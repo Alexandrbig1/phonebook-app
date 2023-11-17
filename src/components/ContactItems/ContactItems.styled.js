@@ -23,6 +23,10 @@ export const List = styled.li`
   &:hover {
     background-color: ${(p) => p.theme.colors.listItemsHover};
   }
+
+  @media (max-width: 365px) {
+    grid-template-columns: 1.25fr 1.75fr;
+  }
 `;
 
 export const ContactListWrapper = styled.div`
@@ -30,22 +34,31 @@ export const ContactListWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
+
 export const ContactAvatarWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 1.2rem;
+
+  @media (max-width: 570px) {
+    gap: 0.8rem;
+  }
 `;
 
-export const P = styled.p`
+export const Text = styled.p`
   display: flex;
   align-items: center;
   justify-content: center;
   color: ${(p) => p.theme.colors.textColor};
   font-family: "Roboto", sans-serif;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-style: normal;
   font-weight: 600;
   line-height: 1.28;
+
+  @media (max-width: 420px) {
+    font-size: 1.2rem;
+  }
 `;
 
 export const PhoneIcon = styled(FaPhone)`
@@ -69,7 +82,19 @@ export const AvatarImg = styled.img`
   height: 4.8rem;
   margin-right: 1.2rem;
   border-radius: 50rem;
+
+  @media (max-width: 570px) {
+    width: 3.6rem;
+    height: 3.6rem;
+    margin-right: 0;
+  }
+
+  @media (max-width: 420px) {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
 `;
+
 export const AvatarImgIcon = styled(FaUserAlt)`
   width: 4.8rem;
   height: 4.8rem;
