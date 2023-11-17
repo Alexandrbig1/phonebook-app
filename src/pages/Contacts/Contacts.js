@@ -11,6 +11,7 @@ import { fetchContacts } from "../../redux/contacts/operations";
 import Tooltip from "@mui/material/Tooltip";
 import Fade from "@mui/material/Fade";
 import { AppButton, AppButtonOpen } from "../../components/AppButton/AppButton";
+import { toast } from "react-toastify";
 import {
   ContactsDiv,
   ContactsTitle,
@@ -28,16 +29,25 @@ export default function Contacts() {
   const [initialLoading, setInitialLoading] = useState(true);
 
   useEffect(() => {
-    try {
-      dispatch(fetchContacts())
-        .unwrap()
-        .catch((error) => {
-          console.error("Error fetching contacts:", error);
-        })
-        .finally(() => {
-          setInitialLoading(false);
-        });
-    } catch (error) {}
+    dispatch(fetchContacts())
+      .then((data) => {
+        const contactsCount = data.payload.length;
+
+        const message =
+          contactsCount === 0
+            ? "You don't have any contacts yet."
+            : contactsCount === 1
+            ? "You have 1 contact."
+            : `You have ${contactsCount} contacts.`;
+
+        toast.success(message);
+      })
+      .catch((error) => {
+        toast.error("Failed to fetch contacts. Please try again.");
+      })
+      .finally(() => {
+        setInitialLoading(false);
+      });
   }, [dispatch]);
 
   useEffect(() => {

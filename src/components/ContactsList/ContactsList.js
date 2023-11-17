@@ -11,20 +11,9 @@ import { fetchContacts } from "../../redux/contacts/operations";
 import Loader from "../Loader/Loader";
 
 export default function ContactsList() {
-  const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
   const filteredContacts = useSelector(selectFiltersContacts);
-
-  useEffect(() => {
-    try {
-      dispatch(fetchContacts())
-        .unwrap()
-        .catch((error) => {
-          console.error("Error fetching contacts:", error);
-        });
-    } catch (error) {}
-  }, []);
 
   function filteredByContact() {
     const filter = filteredContacts.toLowerCase();
