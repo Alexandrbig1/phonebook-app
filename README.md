@@ -4,6 +4,7 @@
 ## This project is a part of my Fullstack Bootcamp's React module, serving as the final project for this module. The React Phonebook allows users to manage their contacts by saving them to a backend server. Users can sign up, sign in, and access their saved contacts through the application.
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/Alexandrbig1/goit-react-hw-08-phonebook)](https://github.com/Alexandrbig1/goit-react-hw-08-phonebook/commits/main)
+[![GitHub license](https://img.shields.io/github/license/Alexandrbig1/goit-react-hw-08-phonebook)](https://github.com/Alexandrbig1/goit-react-hw-08-phonebook/blob/main/LICENSE)
 
 ## Description
 
@@ -38,6 +39,10 @@ Ready to elevate your contact management experience? Explore ConnectContacts tod
 ## Issues
 
 If you encounter any issues or have suggestions, please [open an issue](https://github.com/Alexandrbig1/goit-react-hw-08-phonebook/issues).
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgments
 Special thanks to [@GoIT](https://goit.global/us/) for the guidance and support throughout the development of ConnectContacts.
