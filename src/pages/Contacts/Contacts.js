@@ -4,7 +4,6 @@ import FormSubmit from "../../components/FormSubmit/FormSubmit";
 import ContactsList from "../../components/ContactsList/ContactsList";
 import { useDispatch, useSelector } from "react-redux";
 import { selectContacts } from "../../redux/contacts/selectors";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loader from "../../components/Loader/Loader";
 import { fetchContacts } from "../../redux/contacts/operations";
@@ -94,7 +93,6 @@ export default function Contacts() {
           </AppDiv>
         </Container>
       )}
-      <ToastContainer />
     </>
   );
 }
