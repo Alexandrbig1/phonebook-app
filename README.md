@@ -42,42 +42,28 @@ Ready to elevate your contact management experience? Explore ConnectContacts tod
 
 #### Screenshots:
 
+<img src="./public/images/screenshot1.jpg" alt="Home Page Connect Contacts light mode" width="100%" height="auto" />
+
+*Caption for Screenshot 1 Home Page Connect Contacts (light mode)*
+
+<img src="./public/images/screenshot2.jpg" alt="Home Page Connect Contacts dark mode" width="100%" height="auto" />
+
+*Caption for Screenshot 2 Home Page Connect Contacts (dark mode)*
+  
 <div>
-  <div style="display: grid; grid-template-columns: 1fr 1fr">
-  <figure>
-    <img src="./public/images/screenshot1.jpg" alt="Home Page Connect Contacts light mode" width="100%" height="auto" />
-    <figcaption><span style="font-size: 12px; font-style:italic">Caption for Screenshot 1</span> Home Page Connect Contacts <span style="font-size: 14px">(light mode)</span></figcaption>
-  </figure>
-
-  <figure>
-    <img src="./public/images/screenshot2.jpg" alt="Home Page Connect Contacts dark mode" width="100%" height="auto" />
-    <figcaption><span style="font-size: 12px; font-style:italic">Caption for Screenshot 2</span> Home Page Connect Contacts <span style="font-size: 14px">(dark mode)</span></figcaption>
-  </figure>
-  </div>
-
-  <div style="display: grid; grid-template-columns: 1fr 1fr">
-  <figure>
-    <img src="./public/images/screenshot3.jpg" alt="Sign Up Page light mode" width="100%" height="auto" />
-    <figcaption><span style="font-size: 12px; font-style:italic">Caption for Screenshot 3</span> Sign Up Page <span style="font-size: 14px">(light mode)</span></figcaption>
-  </figure>
-
-  <figure>
-    <img src="./public/images/screenshot4.jpg" alt="Sign In Page dark mode" width="100%" height="auto" />
-    <figcaption><span style="font-size: 12px; font-style:italic">Caption for Screenshot 4</span> Sign In Page <span style="font-size: 14px">(dark mode)</span></figcaption>
-  </figure>
-  </div>
-  <div style="display: grid; grid-template-columns: 1fr 1fr">
-  <figure>
-    <img src="./public/images/screenshot5.jpg" alt="PhoneBook Page Contacts light mode" width="100%" height="auto" />
-    <figcaption><span style="font-size: 12px; font-style:italic">Caption for Screenshot 5</span> Contacts Page <span style="font-size: 14px">(light mode)</span></figcaption>
-  </figure>
-
-  <figure>
-    <img src="./public/images/screenshot6.jpg" alt="PhoneBook Page Contacts dark mode" width="100%" height="auto" />
-    <figcaption><span style="font-size: 12px; font-style:italic">Caption for Screenshot 6</span> Contacts Page <span style="font-size: 14px">(dark mode)</span></figcaption>
-  </figure>
-  </div>
+  <img src="./public/images/screenshot3.jpg" alt="Sign Up Page light mode" width="400" />
+  <img align="right" src="./public/images/screenshot4.jpg" alt="Sign In Page dark mode" width="400" />
 </div>
+
+*Caption for Screenshots 3-4 Sign Up & Sign In Pages (light/dark mode)*
+  
+<img src="./public/images/screenshot5.jpg" alt="PhoneBook Page Contacts light mode" width="100%" height="auto" />
+
+*Caption for Screenshot 5 Contacts Page (light mode)*
+
+<img src="./public/images/screenshot6.jpg" alt="PhoneBook Page Contacts dark mode" width="100%" height="auto" />
+
+*Caption for Screenshot 6 Contacts Page (dark mode)*
 
 ## Issues
 
@@ -101,7 +87,7 @@ Special thanks to [@GoIT](https://goit.global/us/) for the guidance and support 
 <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/></a>
 <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/></a>
 <a href="https://redux.js.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/redux-colored.svg" width="36" height="36" alt="Redux" /></a>
-<a href="https://styled-components.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/styled-components.png" alt="Styled Components" height="50" /></a>
+<a href="https://styled-components.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/styled-components.png" alt="Styled Components" height="50" /><a href="https://mui.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/mui.png" alt="Material UI" height="50" /></a></a>
 </div>
 
 ## Connect with me:
