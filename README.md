@@ -1,4 +1,5 @@
 # **CONNECTCONTACTS** Your Personal Phonebook App
+
 <img align="right" src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="100"/>
 
 ## This project is a part of my Fullstack Bootcamp's React module, serving as the final project for this module. The React Phonebook allows users to manage their contacts by saving them to a backend server. Users can sign up, sign in, and access their saved contacts through the application.
@@ -21,12 +22,13 @@ Ready to elevate your contact management experience? Explore ConnectContacts tod
 
 ## User Guide
 
-* **Sign Up**: Create a new account by providing your details.
-* **Log In**: Use your credentials to log in to ConnectContacts.
-* **Profile**: Update your profile information, including your name, email, and password.
-* **Contacts**: Navigate to the Contacts page to manage your cloud-based contacts. Add, delete, and search for contacts by name.
+- **Sign Up**: Create a new account by providing your details.
+- **Log In**: Use your credentials to log in to ConnectContacts.
+- **Profile**: Update your profile information, including your name, email, and password.
+- **Contacts**: Navigate to the Contacts page to manage your cloud-based contacts. Add, delete, and search for contacts by name.
 
 ## Technologies Used
+
 - ![Alt text](https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black)
 - ![Alt text](https://img.shields.io/badge/Redux-764ABC.svg?style=for-the-badge&logo=Redux&logoColor=white)
 - Redux Persist
@@ -35,6 +37,47 @@ Ready to elevate your contact management experience? Explore ConnectContacts tod
 - Material UI
 - React Icons
 - React Avatars Dicebear
+
+## Project Preview
+
+#### Screenshots:
+
+<div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr">
+  <figure>
+    <img src="./public/images/screenshot1.jpg" alt="Home Page Connect Contacts light mode" width="100%" height="auto" />
+    <figcaption><span style="font-size: 12px; font-style:italic">Caption for Screenshot 1</span> Home Page Connect Contacts <span style="font-size: 14px">(light mode)</span></figcaption>
+  </figure>
+
+  <figure>
+    <img src="./public/images/screenshot2.jpg" alt="Home Page Connect Contacts dark mode" width="100%" height="auto" />
+    <figcaption><span style="font-size: 12px; font-style:italic">Caption for Screenshot 2</span> Home Page Connect Contacts <span style="font-size: 14px">(dark mode)</span></figcaption>
+  </figure>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr">
+  <figure>
+    <img src="./public/images/screenshot3.jpg" alt="Sign Up Page light mode" width="100%" height="auto" />
+    <figcaption><span style="font-size: 12px; font-style:italic">Caption for Screenshot 3</span> Sign Up Page <span style="font-size: 14px">(light mode)</span></figcaption>
+  </figure>
+
+  <figure>
+    <img src="./public/images/screenshot4.jpg" alt="Sign In Page dark mode" width="100%" height="auto" />
+    <figcaption><span style="font-size: 12px; font-style:italic">Caption for Screenshot 4</span> Sign In Page <span style="font-size: 14px">(dark mode)</span></figcaption>
+  </figure>
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr">
+  <figure>
+    <img src="./public/images/screenshot5.jpg" alt="PhoneBook Page Contacts light mode" width="100%" height="auto" />
+    <figcaption><span style="font-size: 12px; font-style:italic">Caption for Screenshot 5</span> Contacts Page <span style="font-size: 14px">(light mode)</span></figcaption>
+  </figure>
+
+  <figure>
+    <img src="./public/images/screenshot6.jpg" alt="PhoneBook Page Contacts dark mode" width="100%" height="auto" />
+    <figcaption><span style="font-size: 12px; font-style:italic">Caption for Screenshot 6</span> Contacts Page <span style="font-size: 14px">(dark mode)</span></figcaption>
+  </figure>
+  </div>
+</div>
 
 ## Issues
 
@@ -45,9 +88,11 @@ If you encounter any issues or have suggestions, please [open an issue](https://
 This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgments
+
 Special thanks to [@GoIT](https://goit.global/us/) for the guidance and support throughout the development of ConnectContacts.
 
 ## Languages and Tools:
+
 <div align="center">  
  
 <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="50" /></a>
@@ -59,7 +104,8 @@ Special thanks to [@GoIT](https://goit.global/us/) for the guidance and support 
 <a href="https://styled-components.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/styled-components.png" alt="Styled Components" height="50" /></a>
 </div>
 
-## Connect with me:  
+## Connect with me:
+
 <div align="center">
 <a href="https://linkedin.com/in/alex-smagin29" target="_blank">
 <img src=https://img.shields.io/badge/linkedin-%231E77B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white alt=linkedin style="margin-bottom: 5px;" />
@@ -76,4 +122,4 @@ Special thanks to [@GoIT](https://goit.global/us/) for the guidance and support 
 <a href="https://www.behance.net/a1126" target="_blank">
 <img src=https://img.shields.io/badge/behance-%23191919.svg?&style=for-the-badge&logo=behance&logoColor=white alt=behance style="margin-bottom: 5px;" />
 </a>  
-</div> 
+</div>
