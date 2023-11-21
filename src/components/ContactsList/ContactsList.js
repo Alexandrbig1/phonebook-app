@@ -1,14 +1,12 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import ContactItems from "../ContactItems/ContactItems";
 import { Menu, Item } from "./ContactsList.styled";
+import Loader from "../Loader/Loader";
 import {
   selectContacts,
   selectIsLoading,
   selectFiltersContacts,
 } from "../../redux/contacts/selectors";
-import { useEffect } from "react";
-import { fetchContacts } from "../../redux/contacts/operations";
-import Loader from "../Loader/Loader";
 
 export default function ContactsList() {
   const contacts = useSelector(selectContacts);

@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-// import "modern-normalize";
 import "modern-normalize/modern-normalize.css";
 
 export const GlobalStyle = createGlobalStyle`
@@ -20,7 +19,6 @@ export const GlobalStyle = createGlobalStyle`
   body {
   background-color: ${(p) => p.theme.colors.mainBgColor};
   font-family: 'Roboto', sans-serif;
-  /* font-family: 'Raleway', sans-serif; */
   }
 
   p {
