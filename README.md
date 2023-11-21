@@ -1,4 +1,4 @@
-# **CONNECTCONTACTS** Your Personal Phonebook App
+# **ConnectContacts** Your Personal Phonebook App
 
 <img align="right" src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="100"/>
 
