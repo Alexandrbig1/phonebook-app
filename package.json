@@ -1,6 +1,18 @@
 {
-  "name": "goit-react-hw-08-phonebook",
+  "name": "phonebook-app",
   "homepage": "http://Alexandrbig1.github.io/phonebook-app",
+  "author": "Alex Smagin",
+  "description": "Manage your contacts with the React Phonebook app. Utilizes Redux, Styled Components, and Async Redux Thunks. Add, delete, and search for contacts with ease.",
+  "keywords": [
+    "React",
+    "Redux",
+    "Styled Components",
+    "Phonebook",
+    "Contacts",
+    "Async",
+    "React Icons"
+  ],
+  "license": "MIT",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

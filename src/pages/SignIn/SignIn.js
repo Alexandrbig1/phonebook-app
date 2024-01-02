@@ -47,7 +47,8 @@ function Copyright(props) {
       {"Alex Smagin © "}
       <LinkStyled
         color="inherit"
-        href="https://alexandrbig1.github.io/goit-react-hw-08-phonebook/"
+        href="https://connectcontacts.netlify.app/"
+        target="_blank"
       >
         PhoneBook
       </LinkStyled>{" "}

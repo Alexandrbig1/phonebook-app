@@ -29,11 +29,11 @@ Ready to elevate your contact management experience? Explore ConnectContacts tod
 
 ## Technologies Used
 
-- ![Alt text](https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black)
-- ![Alt text](https://img.shields.io/badge/Redux-764ABC.svg?style=for-the-badge&logo=Redux&logoColor=white)
+- ![React](https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black)
+- ![Redux](https://img.shields.io/badge/Redux-764ABC.svg?style=for-the-badge&logo=Redux&logoColor=white)
 - Redux Persist
-- ![Alt text](https://img.shields.io/badge/Axios-5A29E4.svg?style=for-the-badge&logo=Axios&logoColor=white) (Web API)
-- ![Alt text](https://img.shields.io/badge/styledcomponents-DB7093.svg?style=for-the-badge&logo=styled-components&logoColor=white)
+- ![Axios](https://img.shields.io/badge/Axios-5A29E4.svg?style=for-the-badge&logo=Axios&logoColor=white) (Web API)
+- ![Styled Components](https://img.shields.io/badge/styledcomponents-DB7093.svg?style=for-the-badge&logo=styled-components&logoColor=white)
 - Material UI
 - React Icons
 - React Avatars Dicebear
@@ -44,26 +44,26 @@ Ready to elevate your contact management experience? Explore ConnectContacts tod
 
 <img src="./public/images/screenshot1.jpg" alt="Home Page Connect Contacts light mode" width="100%" height="auto" />
 
-*Caption for Screenshot 1 Home Page Connect Contacts (light mode)*
+_Caption for Screenshot 1 Home Page Connect Contacts (light mode)_
 
 <img src="./public/images/screenshot2.jpg" alt="Home Page Connect Contacts dark mode" width="100%" height="auto" />
 
-*Caption for Screenshot 2 Home Page Connect Contacts (dark mode)*
-  
+_Caption for Screenshot 2 Home Page Connect Contacts (dark mode)_
+
 <div>
   <img src="./public/images/screenshot3.jpg" alt="Sign Up Page light mode" width="400" />
   <img align="right" src="./public/images/screenshot4.jpg" alt="Sign In Page dark mode" width="400" />
 </div>
 
-*Caption for Screenshots 3-4 Sign Up & Sign In Pages (light/dark mode)*
-  
+_Caption for Screenshots 3-4 Sign Up & Sign In Pages (light/dark mode)_
+
 <img src="./public/images/screenshot5.jpg" alt="PhoneBook Page Contacts light mode" width="100%" height="auto" />
 
-*Caption for Screenshot 5 Contacts Page (light mode)*
+_Caption for Screenshot 5 Contacts Page (light mode)_
 
 <img src="./public/images/screenshot6.jpg" alt="PhoneBook Page Contacts dark mode" width="100%" height="auto" />
 
-*Caption for Screenshot 6 Contacts Page (dark mode)*
+_Caption for Screenshot 6 Contacts Page (dark mode)_
 
 ## Issues
 
