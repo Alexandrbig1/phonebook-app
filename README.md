@@ -6,6 +6,11 @@
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/Alexandrbig1/phonebook-app)](https://github.com/Alexandrbig1/phonebook-app/commits/main)
 [![GitHub license](https://img.shields.io/github/license/Alexandrbig1/phonebook-app)](https://github.com/Alexandrbig1/phonebook-app/blob/main/LICENSE)
+[![React](https://img.shields.io/badge/React-18.0.0-blue.svg)](https://reactjs.org/)
+[![Redux](https://img.shields.io/badge/Redux-8.1.3-6231AF.svg)](https://redux.js.org/)
+[![Axios](https://img.shields.io/badge/Axios-1.6.0-green.svg)](https://github.com/axios/axios)
+[![Styled Components](https://img.shields.io/badge/Styled_Components-6.1.0-orange.svg)](https://styled-components.com/)
+[![React Icons](https://img.shields.io/badge/React_Icons-4.11.0-blueviolet.svg)](https://react-icons.github.io/react-icons/)
 
 ## Description
 
@@ -99,7 +104,10 @@ Special thanks to [@GoIT](https://goit.global/us/) for the guidance and support 
 <a href="https://github.com/alexandrbig1" target="_blank">
 <img src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt=github style="margin-bottom: 5px;" />
 </a>
-  <a href="https://stackoverflow.com/users/22484161/alex-smagin" target="_blank">
+<a href="https://discord.gg/uzM3UNQU" target="_blank">
+<img src="https://img.shields.io/badge/discord-%237289DA.svg?&style=for-the-badge&logo=discord&logoColor=white" alt="Discord" style="margin-bottom: 5px;" />
+</a>
+<a href="https://stackoverflow.com/users/22484161/alex-smagin" target="_blank">
 <img src=https://img.shields.io/badge/stackoverflow-%23F28032.svg?&style=for-the-badge&logo=stackoverflow&logoColor=white alt=stackoverflow style="margin-bottom: 5px;" />
 </a>
 <a href="https://dribbble.com/Alexandrbig1" target="_blank">
@@ -107,5 +115,8 @@ Special thanks to [@GoIT](https://goit.global/us/) for the guidance and support 
 </a>
 <a href="https://www.behance.net/a1126" target="_blank">
 <img src=https://img.shields.io/badge/behance-%23191919.svg?&style=for-the-badge&logo=behance&logoColor=white alt=behance style="margin-bottom: 5px;" />
-</a>  
+</a>
+<a href="https://www.upwork.com/freelancers/~0117da9f9f588056d2" target="_blank">
+<img src="https://img.shields.io/badge/upwork-%230077B5.svg?&style=for-the-badge&logo=upwork&logoColor=white&color=%23167B02" alt="Upwork" style="margin-bottom: 5px;" />
+</a>
 </div>
