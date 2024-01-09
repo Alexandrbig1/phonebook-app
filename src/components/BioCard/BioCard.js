@@ -59,7 +59,7 @@ export default function BioCard() {
             <DribbleIcon />
           </LinkIcon>
           <LinkIcon
-            href="https://www.twitter.com"
+            href="https://twitter.com/alexsmagin29"
             target="_blank"
             rel="noopener noreferrer"
           >
